@@ -1,0 +1,327 @@
+[gd_scene format=3 uid="uid://b0cr7u6meqrbg"]
+
+[ext_resource type="AudioStream" uid="uid://bmylsbekho173" path="res://Assets/sounds/background/awesomeness.mp3" id="3_ow34m"]
+[ext_resource type="AudioStream" uid="uid://ckql0ima7t2kg" path="res://Assets/sounds/sound effects/dragon-studio-button-press-382713.mp3" id="4_l72w3"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_0ykhv"]
+
+[sub_resource type="FontVariation" id="FontVariation_l72w3"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_eiy7p"]
+bg_color = Color(0.92535293, 0.9253528, 0.9253529, 1)
+
+[sub_resource type="FontVariation" id="FontVariation_826wr"]
+
+[sub_resource type="FontVariation" id="FontVariation_ucygd"]
+
+[sub_resource type="FontVariation" id="FontVariation_mipys"]
+
+[sub_resource type="FontVariation" id="FontVariation_8a8k8"]
+
+[sub_resource type="FontVariation" id="FontVariation_7la6k"]
+
+[sub_resource type="FontVariation" id="FontVariation_qoqlk"]
+
+[sub_resource type="FontVariation" id="FontVariation_7r1g0"]
+
+[sub_resource type="FontVariation" id="FontVariation_e2xy7"]
+
+[sub_resource type="FontVariation" id="FontVariation_h7a2f"]
+
+[sub_resource type="FontVariation" id="FontVariation_iwfq2"]
+
+[node name="Control" type="Control" unique_id=633519973]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Panel" type="Panel" parent="." unique_id=352169848]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_0ykhv")
+
+[node name="Label" type="Label" parent="Panel" unique_id=1686293660]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.08767361
+anchor_top = 0.15277778
+anchor_right = 0.2560764
+anchor_bottom = 0.2361111
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 50
+text = "IronVeil"
+metadata/_edit_use_anchors_ = true
+
+[node name="MenuContainer" type="VBoxContainer" parent="." unique_id=570289875]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -110.0
+offset_top = -44.0
+offset_right = 130.5
+offset_bottom = 69.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Start_button" type="Button" parent="MenuContainer" unique_id=1825971685]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0.96474224, 0.96474224, 0.96474224, 1)
+theme_override_fonts/font = SubResource("FontVariation_l72w3")
+theme_override_font_sizes/font_size = 32
+theme_override_styles/normal = SubResource("StyleBoxFlat_eiy7p")
+text = "Start
+"
+
+[node name="Options_button" type="Button" parent="MenuContainer" unique_id=2413744]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0.96474224, 0.96474224, 0.96474224, 1)
+theme_override_fonts/font = SubResource("FontVariation_826wr")
+theme_override_font_sizes/font_size = 32
+theme_override_styles/normal = SubResource("StyleBoxFlat_eiy7p")
+text = "Options
+
+"
+
+[node name="Endgame_button" type="Button" parent="MenuContainer" unique_id=732178096]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0.96474224, 0.96474224, 0.96474224, 1)
+theme_override_fonts/font = SubResource("FontVariation_ucygd")
+theme_override_font_sizes/font_size = 32
+theme_override_styles/normal = SubResource("StyleBoxFlat_eiy7p")
+text = "End Game
+
+"
+
+[node name="Options Panel" type="Panel" parent="." unique_id=1285665388]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -199.5
+offset_top = -173.0
+offset_right = 199.5
+offset_bottom = 173.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Languages_label" type="Label" parent="Options Panel" unique_id=513424132]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -81.75
+offset_right = 81.75
+offset_bottom = 47.0
+grow_horizontal = 2
+size_flags_horizontal = 4
+theme_override_fonts/font = SubResource("FontVariation_mipys")
+theme_override_font_sizes/font_size = 34
+text = "Languages"
+horizontal_alignment = 1
+
+[node name="EnglishButton" type="Button" parent="Options Panel" unique_id=499415064]
+layout_mode = 0
+offset_left = 8.5
+offset_top = 59.0
+offset_right = 130.5
+offset_bottom = 111.0
+size_flags_horizontal = 4
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0.96474224, 0.96474224, 0.96474224, 1)
+theme_override_fonts/font = SubResource("FontVariation_8a8k8")
+theme_override_font_sizes/font_size = 32
+theme_override_styles/normal = SubResource("StyleBoxFlat_eiy7p")
+text = "English"
+
+[node name="FrenchButton" type="Button" parent="Options Panel" unique_id=836387943]
+layout_mode = 0
+offset_left = 138.5
+offset_top = 57.0
+offset_right = 252.5
+offset_bottom = 110.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0.96474224, 0.96474224, 0.96474224, 1)
+theme_override_fonts/font = SubResource("FontVariation_7la6k")
+theme_override_font_sizes/font_size = 32
+theme_override_styles/normal = SubResource("StyleBoxFlat_eiy7p")
+text = "French
+
+"
+
+[node name="Master Label" type="Label" parent="Options Panel" unique_id=1871236983]
+layout_mode = 0
+offset_left = 6.0
+offset_top = 175.0
+offset_right = 114.0
+offset_bottom = 193.0
+theme_override_fonts/font = SubResource("FontVariation_qoqlk")
+text = "Master"
+
+[node name="Media Label" type="Label" parent="Options Panel" unique_id=2023572286]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -14.5
+offset_top = -30.0
+offset_right = 21.5
+offset_bottom = -12.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+theme_override_fonts/font = SubResource("FontVariation_7r1g0")
+text = "Media"
+
+[node name="Sound Effect Label" type="Label" parent="Options Panel" unique_id=242777202]
+layout_mode = 0
+offset_left = 4.0
+offset_top = 239.0
+offset_right = 90.0
+offset_bottom = 257.0
+theme_override_fonts/font = SubResource("FontVariation_e2xy7")
+text = "Sound Effects"
+
+[node name="Music Label" type="Label" parent="Options Panel" unique_id=883924383]
+layout_mode = 0
+offset_left = 8.0
+offset_top = 206.0
+offset_right = 43.0
+offset_bottom = 224.0
+theme_override_fonts/font = SubResource("FontVariation_h7a2f")
+text = "Music"
+
+[node name="Current Languages label" type="Label" parent="Options Panel" unique_id=769381657]
+layout_mode = 0
+offset_left = 58.5
+offset_top = 118.0
+offset_right = 166.5
+offset_bottom = 136.0
+size_flags_horizontal = 4
+theme_override_fonts/font = SubResource("FontVariation_7r1g0")
+text = "Current Language"
+
+[node name="Fullscreen label" type="Label" parent="Options Panel" unique_id=1474025073]
+layout_mode = 0
+offset_left = 64.0
+offset_top = 273.0
+offset_right = 121.0
+offset_bottom = 291.0
+theme_override_fonts/font = SubResource("FontVariation_h7a2f")
+text = "Fullscreen"
+
+[node name="Master Sound Slider" type="HSlider" parent="Options Panel" unique_id=429302815]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.18200001
+anchor_bottom = 0.19000001
+offset_left = 153.0
+offset_top = 181.0
+offset_right = 290.382
+offset_bottom = 138.26
+max_value = 1.0
+step = 0.01
+value = 1.0
+
+[node name="Music Slider" type="HSlider" parent="Options Panel" unique_id=281049878]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.18200001
+anchor_bottom = 0.19000001
+offset_left = 154.0
+offset_top = 199.0
+offset_right = 290.382
+offset_bottom = 169.20999
+max_value = 1.0
+step = 0.01
+value = 1.0
+
+[node name="AudioStreamPlayer2D2" type="AudioStreamPlayer2D" parent="Options Panel/Music Slider" unique_id=1777961676]
+position = Vector2(414, -415)
+stream = ExtResource("3_ow34m")
+autoplay = true
+playback_type = 1
+
+[node name="Sound Effect Slider" type="HSlider" parent="Options Panel" unique_id=1330507017]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.18200001
+anchor_bottom = 0.19000001
+offset_left = 152.0
+offset_top = 230.0
+offset_right = 289.382
+offset_bottom = 189.26
+max_value = 1.0
+step = 0.01
+value = 1.0
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="Options Panel/Sound Effect Slider" unique_id=1692439336]
+position = Vector2(0, -51)
+stream = ExtResource("4_l72w3")
+
+[node name="Save_button" type="Button" parent="Options Panel" unique_id=987410506]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -64.25
+offset_top = -35.0
+offset_right = 64.25
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0.96474224, 0.96474224, 0.96474224, 1)
+theme_override_fonts/font = SubResource("FontVariation_iwfq2")
+theme_override_font_sizes/font_size = 32
+theme_override_styles/normal = SubResource("StyleBoxFlat_eiy7p")
+text = "Save"
+
+[node name="CheckBox" type="CheckBox" parent="Options Panel" unique_id=952730385]
+layout_mode = 0
+offset_left = 237.5
+offset_top = 268.0
+offset_right = 261.5
+offset_bottom = 292.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/checkbox_checked_color = Color(1, 1, 1, 1)
+theme_override_colors/checkbox_unchecked_color = Color(1, 1, 1, 1)
+
+[node name="FlagImage" type="TextureRect" parent="Options Panel" unique_id=1335159370]
+layout_mode = 0
+offset_left = 181.5
+offset_top = 118.0
+offset_right = 222.5
+offset_bottom = 141.0
+expand_mode = 2
+
+[connection signal="pressed" from="MenuContainer/Start_button" to="." method="_on_start_button_pressed"]
+[connection signal="pressed" from="MenuContainer/Options_button" to="." method="_on_options_button_pressed"]
+[connection signal="pressed" from="MenuContainer/Endgame_button" to="." method="_on_endgame_button_pressed"]
+[connection signal="pressed" from="Options Panel/EnglishButton" to="." method="_on_english_button_pressed"]
+[connection signal="pressed" from="Options Panel/FrenchButton" to="." method="_on_french_button_pressed"]
+[connection signal="value_changed" from="Options Panel/Master Sound Slider" to="." method="_on_master_sound_slider_value_changed"]
+[connection signal="value_changed" from="Options Panel/Music Slider" to="." method="_on_music_slider_value_changed"]
+[connection signal="value_changed" from="Options Panel/Sound Effect Slider" to="." method="_on_sound_effect_slider_value_changed"]
+[connection signal="pressed" from="Options Panel/Save_button" to="." method="_on_save_button_pressed"]
+[connection signal="toggled" from="Options Panel/CheckBox" to="." method="_on_check_box_toggled"]
