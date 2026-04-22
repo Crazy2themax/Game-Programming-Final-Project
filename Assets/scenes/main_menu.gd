@@ -121,7 +121,7 @@ func _on_options_button_pressed() -> void:
 
 func _on_start_button_pressed() -> void:
 	$"Options Panel/Sound Effect Slider/AudioStreamPlayer2D".play()
-	get_tree().change_scene_to_file("res://scenes/gameplay.tscn")
+	get_tree().change_scene_to_file("res://Assets/scenes/Background.tscn")
 	print("open new scene")
 
 func _on_endgame_button_pressed() -> void:
