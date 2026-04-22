@@ -261,6 +261,7 @@ value = 1.0
 position = Vector2(414, -415)
 stream = ExtResource("3_ow34m")
 autoplay = true
+bus = &"background"
 playback_type = 1
 
 [node name="Sound Effect Slider" type="HSlider" parent="Options Panel" unique_id=1330507017]
@@ -279,6 +280,7 @@ value = 1.0
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="Options Panel/Sound Effect Slider" unique_id=1692439336]
 position = Vector2(0, -51)
 stream = ExtResource("4_l72w3")
+bus = &"Sound effect"
 
 [node name="Save_button" type="Button" parent="Options Panel" unique_id=987410506]
 layout_mode = 1
