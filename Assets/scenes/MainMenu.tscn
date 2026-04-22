@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://b0cr7u6meqrbg"]
 
 [ext_resource type="Script" uid="uid://d2nb6ssr05csy" path="res://Assets/scenes/main_menu.gd" id="1_8ryqc"]
+[ext_resource type="Texture2D" uid="uid://bec7ql00njwmh" path="res://Assets/Background/medieval-historical-rendering-landscape (1).jpg" id="2_cgy6o"]
 [ext_resource type="AudioStream" uid="uid://bmylsbekho173" path="res://Assets/sounds/background/awesomeness.mp3" id="3_ow34m"]
 [ext_resource type="AudioStream" uid="uid://ckql0ima7t2kg" path="res://Assets/sounds/sound effects/dragon-studio-button-press-382713.mp3" id="4_l72w3"]
 
@@ -49,6 +50,13 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxTexture_0ykhv")
 
+[node name="TextureRect" type="TextureRect" parent="Panel" unique_id=785248331]
+layout_mode = 0
+offset_right = 1152.0
+offset_bottom = 648.0
+texture = ExtResource("2_cgy6o")
+expand_mode = 1
+
 [node name="Label" type="Label" parent="Panel" unique_id=1686293660]
 layout_mode = 1
 anchors_preset = -1
@@ -56,6 +64,8 @@ anchor_left = 0.08767361
 anchor_top = 0.15277778
 anchor_right = 0.2560764
 anchor_bottom = 0.2361111
+offset_top = -7.5
+offset_bottom = 7.5
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_font_sizes/font_size = 50
