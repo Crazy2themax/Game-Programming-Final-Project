@@ -1,5 +1,6 @@
 [gd_scene format=3 uid="uid://b0cr7u6meqrbg"]
 
+[ext_resource type="Script" uid="uid://d2nb6ssr05csy" path="res://Assets/scenes/main_menu.gd" id="1_8ryqc"]
 [ext_resource type="AudioStream" uid="uid://bmylsbekho173" path="res://Assets/sounds/background/awesomeness.mp3" id="3_ow34m"]
 [ext_resource type="AudioStream" uid="uid://ckql0ima7t2kg" path="res://Assets/sounds/sound effects/dragon-studio-button-press-382713.mp3" id="4_l72w3"]
 
@@ -37,6 +38,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_8ryqc")
 
 [node name="Panel" type="Panel" parent="." unique_id=352169848]
 layout_mode = 1
