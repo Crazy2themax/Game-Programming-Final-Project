@@ -1,45 +1,5 @@
 extends CharacterBody2D
 
-
-const ANIMATION_DATA := {
-	"attack": {
-		"texture": preload("res://Assets/character-animation-extended/ATTACK-(horizontal=6,vertical=1).png"),
-		"frames": 6,
-		"fps": 12.0,
-		"loop": false,
-	},
-	"death": {
-		"texture": preload("res://Assets/character-animation-extended/DEATH-(horizontal=12,vertical=1).png"),
-		"frames": 12,
-		"fps": 10.0,
-		"loop": false,
-	},
-	"hurt": {
-		"texture": preload("res://Assets/character-animation-extended/HURT-(horizontal=4,vertical=1).png"),
-		"frames": 4,
-		"fps": 10.0,
-		"loop": false,
-	},
-	"idle": {
-		"texture": preload("res://Assets/character-animation-extended/IDLE(horizontal=7,vertical=1).png"),
-		"frames": 7,
-		"fps": 8.0,
-		"loop": true,
-	},
-	"jump": {
-		"texture": preload("res://Assets/character-animation-extended/JUMP(horizontal=5,vertical=1).png"),
-		"frames": 5,
-		"fps": 8.0,
-		"loop": false,
-	},
-	"run": {
-		"texture": preload("res://Assets/character-animation-extended/RUN-WALK(horizontal=8,vertical=1).png"),
-		"frames": 8,
-		"fps": 10.0,
-		"loop": true,
-	},
-}
-
 enum PlayerState { IDLE, RUN, JUMP, ATTACK, HURT, DEATH }
 
 @export var move_speed := 220.0
@@ -52,7 +12,6 @@ var state := PlayerState.IDLE
 
 
 func _ready() -> void:
-	_build_animations()
 	animated_sprite.animation_finished.connect(_on_animation_finished)
 	camera.enabled = true
 	_update_animation()
@@ -117,29 +76,6 @@ func _start_attack() -> void:
 	state = PlayerState.ATTACK
 	velocity.x = 0.0
 	_update_animation()
-
-
-func _build_animations() -> void:
-	var frames_resource := SpriteFrames.new()
-
-	for animation_name in ANIMATION_DATA:
-		var animation: Dictionary = ANIMATION_DATA[animation_name]
-		var texture := animation["texture"] as Texture2D
-		var frame_count: int = animation["frames"]
-		var frame_width := texture.get_width() / frame_count
-		var frame_height := texture.get_height()
-
-		frames_resource.add_animation(animation_name)
-		frames_resource.set_animation_speed(animation_name, animation["fps"])
-		frames_resource.set_animation_loop(animation_name, animation["loop"])
-
-		for frame_index in range(frame_count):
-			var atlas_texture := AtlasTexture.new()
-			atlas_texture.atlas = texture
-			atlas_texture.region = Rect2(frame_index * frame_width, 0, frame_width, frame_height)
-			frames_resource.add_frame(animation_name, atlas_texture)
-
-	animated_sprite.sprite_frames = frames_resource
 
 
 func _get_movement_state() -> PlayerState:
