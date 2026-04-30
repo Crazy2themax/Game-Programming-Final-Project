@@ -1,119 +1,79 @@
 extends CharacterBody2D
 
-enum PlayerState { IDLE, RUN, JUMP, ATTACK, HURT, DEATH }
+const SPEED = 150.0
+const GRAVITY = 800.0
+const JUMP_VELOCITY = -300.0
 
-@export var move_speed := 220.0
-@export var jump_velocity := -420.0
+enum State { IDLE, RUN, ATTACK, JUMP }
 
-@onready var animated_sprite: AnimatedSprite2D = $AnimatedSprite2D
-@onready var camera: Camera2D = $Camera2D
+var current_state: State = State.IDLE
 
-var state := PlayerState.IDLE
-
+@onready var anim: AnimatedSprite2D = $AnimatedSprite2D  # changed
 
 func _ready() -> void:
-	animated_sprite.animation_finished.connect(_on_animation_finished)
-	camera.enabled = true
-	_update_animation()
-
+	anim.animation_finished.connect(_on_animation_finished)
+	$Camera2D.make_current()
 
 func _physics_process(delta: float) -> void:
 	if not is_on_floor():
-		velocity += get_gravity() * delta
-
-	if state == PlayerState.DEATH:
-		velocity.x = 0.0
-		move_and_slide()
-		_update_animation()
-		return
-
-	if state == PlayerState.ATTACK or state == PlayerState.HURT:
-		velocity.x = 0.0
-		move_and_slide()
-		_update_animation()
-		return
-
-	if Input.is_action_just_pressed("jump") and is_on_floor():
-		velocity.y = jump_velocity
-
-	if Input.is_action_just_pressed("attack_1") or Input.is_action_just_pressed("attack_2"):
-		_start_attack()
-	else:
-		var direction := Input.get_axis("move_left", "move_right")
-		if direction != 0.0:
-			velocity.x = direction * move_speed
-			animated_sprite.flip_h = direction < 0.0
-		else:
-			velocity.x = 0.0
-
+		velocity.y += GRAVITY * delta
+	match current_state:
+		State.IDLE:   handle_idle()
+		State.RUN:    handle_run()
+		State.ATTACK: handle_attack()
+		State.JUMP:   handle_jump()
 	move_and_slide()
 
-	if state != PlayerState.ATTACK and state != PlayerState.HURT and state != PlayerState.DEATH:
-		state = _get_movement_state()
+func handle_idle() -> void:
+	velocity.x = 0
+	play_anim("idle")
+	if Input.is_action_just_pressed("jump") and is_on_floor():
+		change_state(State.JUMP)
+	elif Input.is_action_pressed("move_left") or Input.is_action_pressed("move_right"):
+		change_state(State.RUN)
+	elif Input.is_action_just_pressed("attack_1"):
+		change_state(State.ATTACK)
 
-	_update_animation()
+func handle_run() -> void:
+	play_anim("run")                          # was "walk" — new sprite uses "run"
+	var dir = Input.get_axis("move_left", "move_right")
+	velocity.x = dir * SPEED
+	if dir != 0:
+		anim.flip_h = dir < 0               # flip is on AnimatedSprite2D directly
+	if Input.is_action_just_pressed("jump") and is_on_floor():
+		change_state(State.JUMP)
+	elif dir == 0:
+		change_state(State.IDLE)
+	elif Input.is_action_just_pressed("attack_1"):
+		change_state(State.ATTACK)
 
+func handle_jump() -> void:
+	play_anim("jump")
+	var dir = Input.get_axis("move_left", "move_right")
+	velocity.x = dir * SPEED
+	if dir != 0:
+		anim.flip_h = dir < 0
+	if is_on_floor():
+		change_state(State.IDLE)
 
-func play_hurt() -> void:
-	if state == PlayerState.DEATH:
-		return
+func handle_attack() -> void:
+	velocity.x = 0
+	play_anim("attack")                       # new sprite has one "attack", not attack_1/2
 
-	state = PlayerState.HURT
-	velocity.x = 0.0
-	_update_animation()
+func _on_animation_finished() -> void:        # AnimatedSprite2D signal has no argument
+	match anim.animation:
+		"attack":
+			change_state(State.IDLE)
+		"hurt":
+			change_state(State.IDLE)
+		"death":
+			pass                              # stay dead
 
+func change_state(new_state: State) -> void:
+	current_state = new_state
+	if new_state == State.JUMP:
+		velocity.y = JUMP_VELOCITY
 
-func play_death() -> void:
-	state = PlayerState.DEATH
-	velocity = Vector2.ZERO
-	_update_animation()
-
-
-func _start_attack() -> void:
-	if state == PlayerState.DEATH:
-		return
-
-	state = PlayerState.ATTACK
-	velocity.x = 0.0
-	_update_animation()
-
-
-func _get_movement_state() -> PlayerState:
-	if not is_on_floor():
-		return PlayerState.JUMP
-
-	if abs(velocity.x) > 0.1:
-		return PlayerState.RUN
-
-	return PlayerState.IDLE
-
-
-func _update_animation() -> void:
-	var animation_name := &"idle"
-
-	match state:
-		PlayerState.RUN:
-			animation_name = &"run"
-		PlayerState.JUMP:
-			animation_name = &"jump"
-		PlayerState.ATTACK:
-			animation_name = &"attack"
-		PlayerState.HURT:
-			animation_name = &"hurt"
-		PlayerState.DEATH:
-			animation_name = &"death"
-
-	_play_animation(animation_name)
-
-
-func _play_animation(animation_name: StringName) -> void:
-	if animated_sprite.animation == animation_name:
-		return
-
-	animated_sprite.play(animation_name)
-
-
-func _on_animation_finished() -> void:
-	if state == PlayerState.ATTACK or state == PlayerState.HURT:
-		state = _get_movement_state()
-		_update_animation()
+func play_anim(anim_name: String) -> void:
+	if anim.animation != anim_name:           # AnimatedSprite2D uses .animation not .current_animation
+		anim.play(anim_name)

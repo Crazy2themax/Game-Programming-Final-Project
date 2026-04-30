@@ -16,7 +16,7 @@
 [ext_resource type="Texture2D" uid="uid://twrtwifoep6x" path="res://Assets/Background/GandalfHardcore FREE Platformer Assets/tent.png" id="13_cjcy6"]
 [ext_resource type="Texture2D" uid="uid://lu1wmuu4ax85" path="res://Assets/Background/GandalfHardcore FREE Platformer Assets/axe.png" id="14_qkwuj"]
 [ext_resource type="Texture2D" uid="uid://dr7fqn4y7ncee" path="res://Assets/Background/GandalfHardcore FREE Platformer Assets/logs.png" id="15_fdanu"]
-[ext_resource type="Script" path="res://Assets/scripts/background.gd" id="16_o7a3o"]
+[ext_resource type="Script" uid="uid://cxpxoaexofne1" path="res://Assets/scripts/background.gd" id="16_o7a3o"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_q3qut"]
 
