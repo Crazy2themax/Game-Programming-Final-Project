@@ -1,4 +1,4 @@
-[gd_scene format=3 uid="uid://bblfch6q7cjkv"]
+[gd_scene format=4 uid="uid://bblfch6q7cjkv"]
 
 [ext_resource type="Texture2D" uid="uid://0mv2h176c0wg" path="res://Assets/Background/lvl 2 background/Glacial-mountains-parallax-background_vnitti/Layers/sky.png" id="1_iuiu5"]
 [ext_resource type="Texture2D" uid="uid://bj008ly4t14hc" path="res://Assets/Background/lvl 2 background/Glacial-mountains-parallax-background_vnitti/Layers/cloud_lonely.png" id="2_y6uo0"]
@@ -8,6 +8,8 @@
 [ext_resource type="Texture2D" uid="uid://dd27muqw6qpew" path="res://Assets/Background/lvl 2 background/Glacial-mountains-parallax-background_vnitti/Layers/clouds_mg_1_lightened.png" id="6_p7f2n"]
 [ext_resource type="Texture2D" uid="uid://b1s8k3vkreug5" path="res://Assets/Background/GandalfHardcore FREE Platformer Assets/Floor Tiles2.png" id="7_bm7mi"]
 [ext_resource type="PackedScene" uid="uid://dqlvxnkvo2014" path="res://Assets/scenes/player.tscn" id="8_v4v63"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_iuiu5"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_gre0b"]
 texture = ExtResource("7_bm7mi")
@@ -488,9 +490,13 @@ texture = ExtResource("7_bm7mi")
 16:29/0 = 0
 17:29/0 = 0
 2:30/0 = 0
+2:30/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, -8, -8, 8, -8, 8, 6.6547737, 8, 8, -8, 8)
 3:30/0 = 0
+3:30/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, -8, -8, 8, -8, 8, 6.6547737, 8, 8, -8, 8)
 4:30/0 = 0
+4:30/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, -8, -8, 8, -8, 8, 6.6547737, 8, 8, -8, 8)
 5:30/0 = 0
+5:30/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, -8, -8, 8, -8, 8, 6.6547737, 8, 8, -8, 8)
 8:30/0 = 0
 9:30/0 = 0
 10:30/0 = 0
@@ -575,8 +581,12 @@ texture = ExtResource("7_bm7mi")
 15:35/0 = 0
 16:35/0 = 0
 17:35/0 = 0
+6:30/0 = 0
+1:30/0 = 0
 
 [sub_resource type="TileSet" id="TileSet_lwule"]
+physics_layer_0/collision_layer = 1
+physics_layer_0/physics_material = SubResource("PhysicsMaterial_iuiu5")
 sources/1 = SubResource("TileSetAtlasSource_gre0b")
 
 [node name="level 2" type="Node2D" unique_id=1035286738]
@@ -631,11 +641,10 @@ scale = Vector2(2.986979, 2.9953704)
 texture = ExtResource("6_p7f2n")
 metadata/_edit_lock_ = true
 
-[node name="TileMap" type="TileMap" parent="." unique_id=1996384406]
+[node name="TileMap" type="TileMapLayer" parent="." unique_id=307765502]
 position = Vector2(0, 525)
+tile_map_data = PackedByteArray("AAABAAUAAQACAB4AAAACAAUAAQADAB4AAAADAAUAAQAEAB4AAAAEAAUAAQAFAB4AAAAJAAEAAQACAB4AAAAKAAEAAQADAB4AAAALAAEAAQAEAB4AAAAMAAEAAQAFAB4AAAATAAQAAQACAB4AAAAUAAQAAQADAB4AAAAVAAQAAQAEAB4AAAAWAAQAAQAFAB4AAAAgAP3/AQACAB4AAAAhAP3/AQADAB4AAAAiAP3/AQAEAB4AAAAjAP3/AQAFAB4AAAArAAQAAQACAB4AAAAsAAQAAQADAB4AAAAtAAQAAQAEAB4AAAAuAAQAAQAFAB4AAAA7AAQAAQACAB4AAAA8AAQAAQADAB4AAAA9AAQAAQAEAB4AAAA+AAQAAQAFAB4AAAA0AP3/AQACAB4AAAA1AP3/AQADAB4AAAA2AP3/AQAEAB4AAAA3AP3/AQAFAB4AAAA=")
 tile_set = SubResource("TileSet_lwule")
-format = 2
 
 [node name="Player" parent="TileMap" unique_id=1946971537 instance=ExtResource("8_v4v63")]
-visible = false
-position = Vector2(5, 0)
+position = Vector2(29, 36)
