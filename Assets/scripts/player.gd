@@ -1,10 +1,10 @@
 extends CharacterBody2D
 
 const SPEED = 150.0
-const GRAVITY = 800.0
-const JUMP_VELOCITY = -300.0
+const GRAVITY = 600.0
+const JUMP_VELOCITY = -390.0
 
-enum State { IDLE, RUN, ATTACK, JUMP }
+enum State { IDLE, RUN, ATTACK,  JUMP }
 
 var current_state: State = State.IDLE
 
@@ -12,7 +12,7 @@ var current_state: State = State.IDLE
 
 func _ready() -> void:
 	anim.animation_finished.connect(_on_animation_finished)
-	$Camera2D.make_current()
+	
 
 func _physics_process(delta: float) -> void:
 	if not is_on_floor():
