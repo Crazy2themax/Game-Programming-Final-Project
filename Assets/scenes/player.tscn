@@ -348,5 +348,3 @@ shape = SubResource("CapsuleShape2D_543sj")
 sprite_frames = SubResource("SpriteFrames_f3mpq")
 animation = &"hurt"
 autoplay = "idle"
-
-[node name="Camera2D" type="Camera2D" parent="." unique_id=1238965459]
