@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://b3m6dd6msqip1"
+path="res://.godot/imported/dragon-attack-sfx-fireball-destruction-omnimous-sfx.mp3-3448e541336998dcc6b36b01adcea02e.mp3str"
+
+[deps]
+
+source_file="res://Assets/sounds/sound effects/final-level/dragon-attack-sfx-fireball-destruction-omnimous-sfx.mp3"
+dest_files=["res://.godot/imported/dragon-attack-sfx-fireball-destruction-omnimous-sfx.mp3-3448e541336998dcc6b36b01adcea02e.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://ngpjj5ynqcno"
+path="res://.godot/imported/dragon-roar-sfx.mp3-e7f3c019ac953c09a2fc4d42563ecaed.mp3str"
+
+[deps]
+
+source_file="res://Assets/sounds/sound effects/final-level/dragon-roar-sfx.mp3"
+dest_files=["res://.godot/imported/dragon-roar-sfx.mp3-e7f3c019ac953c09a2fc4d42563ecaed.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
