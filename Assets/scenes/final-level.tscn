@@ -1,0 +1,43 @@
+[gd_scene format=3 uid="uid://cok27jnxmrn8"]
+
+[ext_resource type="Texture2D" uid="uid://c0wbhlyl4hv3e" path="res://Assets/final-level/background/wall-inner-castle-dungeon-view-parallax.png" id="1_dhtww"]
+[ext_resource type="Texture2D" uid="uid://b2tfmb3642clg" path="res://Assets/final-level/background/base-parallax.png" id="2_luopi"]
+[ext_resource type="PackedScene" uid="uid://dqlvxnkvo2014" path="res://Assets/scenes/player.tscn" id="3_player"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_floor"]
+size = Vector2(10000, 21.5)
+
+[node name="FinalLevel" type="Node2D" unique_id=431650970]
+rotation = -0.0013729586
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="." unique_id=858811478]
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground" unique_id=195463631]
+motion_mirroring = Vector2(1152, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer" unique_id=1907245676]
+rotation = 0.0019439545
+scale = Vector2(2.077, 2)
+texture = ExtResource("1_dhtww")
+centered = false
+
+[node name="ParallaxLayer2" type="ParallaxLayer" parent="ParallaxBackground" unique_id=1016357627]
+motion_scale = Vector2(2, 2)
+motion_mirroring = Vector2(1152, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer2" unique_id=1213828581]
+scale = Vector2(1.038, 1)
+texture = ExtResource("2_luopi")
+centered = false
+
+[node name="Floor" type="StaticBody2D" parent="." unique_id=15539708]
+position = Vector2(0, 574)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Floor" unique_id=2042215105]
+position = Vector2(667, 47.25)
+shape = SubResource("RectangleShape2D_floor")
+
+[node name="Player" parent="." unique_id=202204149 instance=ExtResource("3_player")]
+scale = Vector2(4, 4)
+
+[node name="Camera2D" type="Camera2D" parent="Player" unique_id=552311914]

@@ -19,6 +19,10 @@ config/icon="res://icon.svg"
 
 MusicManager="*uid://b60yaplr0jxy8"
 
+[display]
+
+window/size/viewport_height=1081
+
 [input]
 
 move_left={
