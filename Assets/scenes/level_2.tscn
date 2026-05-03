@@ -619,6 +619,7 @@ script = ExtResource("1_y6uo0")
 [node name="ParallaxBackground" type="ParallaxBackground" parent="." unique_id=937682882]
 
 [node name="sky" type="ParallaxLayer" parent="ParallaxBackground" unique_id=880036308]
+motion_mirroring = Vector2(1152, 0)
 
 [node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/sky" unique_id=1905643930]
 modulate = Color(0.42365062, 0.42365065, 0.42365062, 1)
@@ -628,6 +629,7 @@ texture = ExtResource("1_iuiu5")
 metadata/_edit_lock_ = true
 
 [node name="background cloud" type="ParallaxLayer" parent="ParallaxBackground" unique_id=1405136294]
+motion_mirroring = Vector2(1152, 0)
 
 [node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/background cloud" unique_id=876980679]
 position = Vector2(576.00006, 324)
@@ -636,6 +638,7 @@ texture = ExtResource("2_y6uo0")
 metadata/_edit_lock_ = true
 
 [node name="mountains" type="ParallaxLayer" parent="ParallaxBackground" unique_id=553514482]
+motion_mirroring = Vector2(1152, 0)
 
 [node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/mountains" unique_id=704659684]
 modulate = Color(0.641934, 0.641934, 0.641934, 1)
@@ -645,6 +648,7 @@ texture = ExtResource("3_trjvv")
 metadata/_edit_lock_ = true
 
 [node name="cloud background" type="ParallaxLayer" parent="ParallaxBackground" unique_id=373114599]
+motion_mirroring = Vector2(1152, 0)
 
 [node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/cloud background" unique_id=298247362]
 modulate = Color(0.8089983, 0.8089983, 0.8089982, 1)
@@ -654,6 +658,7 @@ texture = ExtResource("4_qm0q2")
 metadata/_edit_lock_ = true
 
 [node name="cloud middle" type="ParallaxLayer" parent="ParallaxBackground" unique_id=389174241]
+motion_mirroring = Vector2(1152, 0)
 
 [node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/cloud middle" unique_id=699014888]
 modulate = Color(0.7750634, 0.7750634, 0.7750634, 1)
@@ -663,6 +668,7 @@ texture = ExtResource("5_v3ism")
 metadata/_edit_lock_ = true
 
 [node name="cloud front" type="ParallaxLayer" parent="ParallaxBackground" unique_id=1764542785]
+motion_mirroring = Vector2(1152, 0)
 
 [node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/cloud front" unique_id=1884294065]
 modulate = Color(0.74558026, 0.7455802, 0.7455802, 1)
@@ -687,13 +693,13 @@ limit_top = 0
 limit_bottom = 648
 
 [node name="CPUParticles2D" type="CPUParticles2D" parent="." unique_id=1129127467]
-position = Vector2(603, 2)
+position = Vector2(1196, 2)
 amount = 300
 lifetime = 1.24
 speed_scale = 0.3
 randomness = 0.5
 emission_shape = 3
-emission_rect_extents = Vector2(600, 1)
+emission_rect_extents = Vector2(1200, 1)
 direction = Vector2(45, 0)
 angular_velocity_min = -578.76
 angular_velocity_max = 227.37
