@@ -622,7 +622,7 @@ script = ExtResource("1_y6uo0")
 motion_mirroring = Vector2(1152, 0)
 
 [node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/sky" unique_id=1905643930]
-modulate = Color(0.42365062, 0.42365065, 0.42365062, 1)
+modulate = Color(0.11489687, 0.1148968, 0.11489678, 1)
 position = Vector2(575.99994, 324)
 scale = Vector2(3.0000002, 3)
 texture = ExtResource("1_iuiu5")
@@ -632,6 +632,7 @@ metadata/_edit_lock_ = true
 motion_mirroring = Vector2(1152, 0)
 
 [node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/background cloud" unique_id=876980679]
+modulate = Color(0.4661808, 0.46618086, 0.46618068, 1)
 position = Vector2(576.00006, 324)
 scale = Vector2(3, 3)
 texture = ExtResource("2_y6uo0")
@@ -641,7 +642,7 @@ metadata/_edit_lock_ = true
 motion_mirroring = Vector2(1152, 0)
 
 [node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/mountains" unique_id=704659684]
-modulate = Color(0.641934, 0.641934, 0.641934, 1)
+modulate = Color(0.3529412, 0.3529412, 0.3529412, 0.9843137)
 position = Vector2(576, 324)
 scale = Vector2(3, 3)
 texture = ExtResource("3_trjvv")
@@ -651,7 +652,7 @@ metadata/_edit_lock_ = true
 motion_mirroring = Vector2(1152, 0)
 
 [node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/cloud background" unique_id=298247362]
-modulate = Color(0.8089983, 0.8089983, 0.8089982, 1)
+modulate = Color(0.41215247, 0.41215247, 0.41215247, 1)
 position = Vector2(576.00006, 324.5)
 scale = Vector2(3.0000002, 2.9953704)
 texture = ExtResource("4_qm0q2")
@@ -661,7 +662,7 @@ metadata/_edit_lock_ = true
 motion_mirroring = Vector2(1152, 0)
 
 [node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/cloud middle" unique_id=699014888]
-modulate = Color(0.7750634, 0.7750634, 0.7750634, 1)
+modulate = Color(0.47007608, 0.4700758, 0.47007585, 1)
 position = Vector2(576, 324)
 scale = Vector2(3, 2.9999998)
 texture = ExtResource("5_v3ism")
@@ -671,7 +672,7 @@ metadata/_edit_lock_ = true
 motion_mirroring = Vector2(1152, 0)
 
 [node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/cloud front" unique_id=1884294065]
-modulate = Color(0.74558026, 0.7455802, 0.7455802, 1)
+modulate = Color(0.42365035, 0.4236507, 0.42365062, 1)
 position = Vector2(576, 324)
 scale = Vector2(3, 2.9999998)
 texture = ExtResource("6_p7f2n")
@@ -687,7 +688,6 @@ position = Vector2(51, 561)
 
 [node name="Camera2D" type="Camera2D" parent="Player" unique_id=232139536]
 position = Vector2(0, 6)
-zoom = Vector2(1.7, 1.7)
 limit_left = 0
 limit_top = 0
 limit_bottom = 648
