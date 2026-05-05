@@ -1,13 +1,15 @@
 extends Area2D
 
 @export var speed := 500.0
-@export var max_travel_time := 3.0
+@export var max_travel_time := 10.0
 
 var direction := Vector2.LEFT
 var travel_time := 0.0
 var active := false
 var spawn_point: Marker2D
 var dragon_owner: Node2D
+var destroy_on_reset := false
+var has_launched := false
 
 func _ready() -> void:
 	body_entered.connect(_on_body_entered)
@@ -24,10 +26,17 @@ func _physics_process(delta: float) -> void:
 	if travel_time >= max_travel_time:
 		reset_to_spawn()
 
-func configure(new_spawn_point: Marker2D, new_owner: Node2D, launch_direction: Vector2 = Vector2.LEFT) -> void:
+func configure(
+		new_spawn_point: Marker2D,
+		new_owner: Node2D,
+		launch_direction: Vector2 = Vector2.LEFT,
+		should_destroy_on_reset: bool = false
+	) -> void:
 	spawn_point = new_spawn_point
 	dragon_owner = new_owner
 	direction = launch_direction.normalized()
+	destroy_on_reset = should_destroy_on_reset
+	has_launched = false
 	reset_to_spawn()
 
 func is_ready_to_launch() -> bool:
@@ -40,6 +49,7 @@ func launch() -> void:
 
 	travel_time = 0.0
 	active = true
+	has_launched = true
 	top_level = true
 	global_position = spawn_point.global_position
 	show()
@@ -51,6 +61,9 @@ func reset_to_spawn() -> void:
 	travel_time = 0.0
 	monitoring = false
 	set_physics_process(false)
+	if destroy_on_reset and has_launched:
+		queue_free()
+		return
 	hide()
 	top_level = false
 	position = Vector2.ZERO

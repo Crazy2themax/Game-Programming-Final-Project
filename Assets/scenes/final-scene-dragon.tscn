@@ -2,14 +2,15 @@
 
 [ext_resource type="Texture2D" uid="uid://bwvvmt01ufron" path="res://Assets/final-level/death-dragon-animation(1,3).png" id="1_death"]
 [ext_resource type="Script" uid="uid://bvwf30yfgj6ec" path="res://Assets/scripts/dragon.gd" id="1_dragon"]
-[ext_resource type="AudioStream" path="res://Assets/sounds/sound effects/final-level/dragon-attack-sfx-fireball-destruction-omnimous-sfx.mp3" id="2_attack_sfx"]
+[ext_resource type="Script" uid="uid://qn263vdxe7ia" path="res://Assets/scripts/player_health.gd" id="1_health"]
 [ext_resource type="Texture2D" uid="uid://djjy0kegyss7u" path="res://Assets/final-level/dragon-fireball-launch-animation(1,6).png" id="2_attack"]
+[ext_resource type="AudioStream" uid="uid://b3m6dd6msqip1" path="res://Assets/sounds/sound effects/final-level/dragon-attack-sfx-fireball-destruction-omnimous-sfx.mp3" id="2_attack_sfx"]
 [ext_resource type="Script" uid="uid://cka7n8ws4jjd6" path="res://Assets/scripts/fireball.gd" id="2_fireball_script"]
-[ext_resource type="AudioStream" path="res://Assets/sounds/sound effects/final-level/dragon-roar-sfx.mp3" id="3_roar_sfx"]
+[ext_resource type="AudioStream" uid="uid://ngpjj5ynqcno" path="res://Assets/sounds/sound effects/final-level/dragon-roar-sfx.mp3" id="3_roar_sfx"]
 [ext_resource type="Texture2D" uid="uid://dg3n3efelyut" path="res://Assets/final-level/fireball_only-sprite-animation(1,6).png" id="5_fireball"]
 
 [sub_resource type="RectangleShape2D" id="RS_dragon_body"]
-size = Vector2(165, 86)
+size = Vector2(179, 86)
 
 [sub_resource type="AtlasTexture" id="AT_attack_0"]
 atlas = ExtResource("2_attack")
@@ -179,21 +180,19 @@ position = Vector2(581, 518)
 script = ExtResource("1_dragon")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=3055182]
-position = Vector2(83.5, 8)
+position = Vector2(58.5, 8)
 shape = SubResource("RS_dragon_body")
 
 [node name="DragonAnimatedSprite" type="AnimatedSprite2D" parent="." unique_id=50884268]
 position = Vector2(53, -3)
 scale = Vector2(0.96062994, 1)
 sprite_frames = SubResource("SF_dragon")
-animation = &"attack"
+animation = &"death"
 autoplay = "attack"
-frame = 5
-frame_progress = 1.0
 flip_h = true
 
 [node name="FireballLaunchPoint" type="Marker2D" parent="DragonAnimatedSprite" unique_id=1839370705]
-position = Vector2(-85.36066, 20)
+position = Vector2(-93.68852, 20)
 
 [node name="Fireball" type="Area2D" parent="DragonAnimatedSprite/FireballLaunchPoint" unique_id=421426828]
 position = Vector2(9.368852, 36)
@@ -220,3 +219,10 @@ max_distance = 1800.0
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=245447157]
 libraries/ = SubResource("AnimLib_dragon")
+
+[node name="BossHealth" type="Node" parent="." unique_id=150420003]
+script = ExtResource("1_health")
+invulnerability_duration = 0.15
+
+[node name="InvulnerabilityTimer" type="Timer" parent="BossHealth" unique_id=150420004]
+one_shot = true
