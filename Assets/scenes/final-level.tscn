@@ -8,7 +8,6 @@
 size = Vector2(10000, 21.5)
 
 [node name="FinalLevel" type="Node2D" unique_id=431650970]
-rotation = -0.0013729586
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="." unique_id=858811478]
 
@@ -16,7 +15,6 @@ rotation = -0.0013729586
 motion_mirroring = Vector2(1152, 0)
 
 [node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer" unique_id=1907245676]
-rotation = 0.0019439545
 scale = Vector2(2.077, 2)
 texture = ExtResource("1_dhtww")
 centered = false
