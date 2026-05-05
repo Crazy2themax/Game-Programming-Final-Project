@@ -8,6 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://vk0dw7ajom6j" path="res://Assets/character-animation-extended/IDLE(horizontal=7,vertical=1).png" id="5_idle"]
 [ext_resource type="Texture2D" uid="uid://cr6ctvai2tmwb" path="res://Assets/character-animation-extended/JUMP(horizontal=5,vertical=1).png" id="6_jump"]
 [ext_resource type="Texture2D" uid="uid://b12spl72y85g5" path="res://Assets/character-animation-extended/RUN-WALK(horizontal=8,vertical=1).png" id="7_run"]
+[ext_resource type="Script" path="res://Assets/scripts/player_health.gd" id="8_health"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_543sj"]
 height = 40.0
@@ -347,9 +348,15 @@ shape = SubResource("CapsuleShape2D_543sj")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1202004754]
 sprite_frames = SubResource("SpriteFrames_f3mpq")
-animation = &"hurt"
+animation = &"idle"
 autoplay = "idle"
 
 [node name="AttackSfx" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("2_attack_sfx")
 bus = &"Sound effect"
+
+[node name="PlayerHealth" type="Node" parent="."]
+script = ExtResource("8_health")
+
+[node name="InvulnerabilityTimer" type="Timer" parent="PlayerHealth"]
+one_shot = true

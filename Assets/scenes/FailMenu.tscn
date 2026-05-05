@@ -1,6 +1,6 @@
-[gd_scene format=3 uid="uid://b0cr7u6meqrbg"]
+[gd_scene format=3 uid="uid://kjgfkww7rfsl"]
 
-[ext_resource type="Script" uid="uid://d2nb6ssr05csy" path="res://Assets/scenes/main_menu.gd" id="1_8ryqc"]
+[ext_resource type="Script" uid="uid://cm50bok1l2dh7" path="res://Assets/scenes/fail_menu.gd" id="1_8ryqc"]
 [ext_resource type="Texture2D" uid="uid://bec7ql00njwmh" path="res://Assets/Background/medieval-historical-rendering-landscape (1).jpg" id="2_cgy6o"]
 [ext_resource type="AudioStream" uid="uid://bmylsbekho173" path="res://Assets/sounds/background/awesomeness.mp3" id="3_ow34m"]
 [ext_resource type="AudioStream" uid="uid://kxedmpkvajvm" path="res://Assets/sounds/sound effects/dragon-studio-button-press-382713.mp3" id="4_l72w3"]
@@ -57,6 +57,17 @@ offset_bottom = 1085.0
 texture = ExtResource("2_cgy6o")
 expand_mode = 1
 
+[node name="RedOverlay" type="ColorRect" parent="Panel" unique_id=1254683881]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 338.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0.75, 0.08, 0.08, 0.18)
+
 [node name="Label" type="Label" parent="Panel" unique_id=1686293660]
 layout_mode = 1
 anchors_preset = -1
@@ -72,6 +83,44 @@ theme_override_font_sizes/font_size = 50
 text = "The Last Knight’s Quest"
 metadata/_edit_use_anchors_ = true
 
+[node name="FailMessage" type="Label" parent="Panel" unique_id=162773315]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.232
+anchor_top = 0.382
+anchor_right = 0.743
+anchor_bottom = 0.458
+offset_left = -71.26398
+offset_top = -46.941986
+offset_right = 77.064026
+offset_bottom = 11.902008
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.86, 0.12, 0.12, 1)
+theme_override_fonts/font = SubResource("FontVariation_l72w3")
+theme_override_font_sizes/font_size = 32
+text = "Another Brave Knight has Fallen. The princess remains hostage of the Dragon"
+horizontal_alignment = 1
+autowrap_mode = 3
+
+[node name="HighestLevelLabel" type="Label" parent="Panel" unique_id=1263093589]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.31
+anchor_top = 0.47
+anchor_right = 0.67
+anchor_bottom = 0.525
+offset_left = 16.880005
+offset_top = -18.070007
+offset_right = 16.880005
+offset_bottom = -18.070007
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = SubResource("FontVariation_l72w3")
+theme_override_font_sizes/font_size = 32
+text = "Highest Quest Reached: 1"
+horizontal_alignment = 1
+
 [node name="MenuContainer" type="VBoxContainer" parent="." unique_id=570289875]
 layout_mode = 1
 anchors_preset = 8
@@ -80,9 +129,9 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -110.0
-offset_top = -76.0
+offset_top = 20.0
 offset_right = 130.5
-offset_bottom = 108.0
+offset_bottom = 204.0
 grow_horizontal = 2
 grow_vertical = 2
 
@@ -93,7 +142,7 @@ theme_override_colors/font_hover_color = Color(0.96474224, 0.96474224, 0.9647422
 theme_override_fonts/font = SubResource("FontVariation_l72w3")
 theme_override_font_sizes/font_size = 32
 theme_override_styles/normal = SubResource("StyleBoxFlat_eiy7p")
-text = "Start
+text = "Restart
 "
 
 [node name="Options_button" type="Button" parent="MenuContainer" unique_id=2413744]

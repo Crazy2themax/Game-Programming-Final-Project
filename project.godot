@@ -10,7 +10,7 @@ config_version=5
 
 [application]
 
-config/name="GameProgrammingFinalProject"
+config/name="The Last Knight’s Quest"
 run/main_scene="uid://b0cr7u6meqrbg"
 config/features=PackedStringArray("4.6", "Mobile")
 config/icon="res://icon.svg"
@@ -19,6 +19,7 @@ config/icon="res://icon.svg"
 
 Localization="*res://Assets/scripts/Localization.gd"
 MusicManager="*uid://b60yaplr0jxy8"
+GameSession="*res://Assets/scripts/game_session.gd"
 
 [display]
 

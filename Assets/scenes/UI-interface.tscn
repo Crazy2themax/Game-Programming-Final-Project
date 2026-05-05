@@ -1,0 +1,89 @@
+[gd_scene load_steps=6 format=3]
+
+[ext_resource type="Script" path="res://Assets/scripts/ui_interface.gd" id="1_ui_script"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_panel"]
+bg_color = Color(0.0784314, 0.0784314, 0.117647, 0.7)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.854902, 0.854902, 0.854902, 0.25)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_life_background"]
+bg_color = Color(0.160784, 0.160784, 0.203922, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_life_fill"]
+bg_color = Color(0.827451, 0.121569, 0.121569, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+
+[sub_resource type="FontVariation" id="FontVariation_ui"]
+
+[node name="UI-interface" type="CanvasLayer"]
+script = ExtResource("1_ui_script")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+offset_left = 20.0
+offset_top = 18.0
+offset_right = 430.0
+offset_bottom = 145.0
+
+[node name="PanelContainer" type="PanelContainer" parent="MarginContainer"]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_panel")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/PanelContainer"]
+layout_mode = 2
+theme_override_constants/separation = 8
+
+[node name="LifeContainer" type="VBoxContainer" parent="MarginContainer/PanelContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="LifeLabel" type="Label" parent="MarginContainer/PanelContainer/VBoxContainer/LifeContainer"]
+layout_mode = 2
+theme_override_fonts/font = SubResource("FontVariation_ui")
+theme_override_font_sizes/font_size = 20
+text = "Knight's Life"
+
+[node name="LifeBar" type="ProgressBar" parent="MarginContainer/PanelContainer/VBoxContainer/LifeContainer"]
+custom_minimum_size = Vector2(170, 18)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/background = SubResource("StyleBoxFlat_life_background")
+theme_override_styles/fill = SubResource("StyleBoxFlat_life_fill")
+max_value = 4.0
+value = 4.0
+show_percentage = false
+
+[node name="LevelLabel" type="Label" parent="MarginContainer/PanelContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = SubResource("FontVariation_ui")
+theme_override_font_sizes/font_size = 20
+text = "Quest: 1"
+
+[node name="CountdownLabel" type="Label" parent="MarginContainer/PanelContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = SubResource("FontVariation_ui")
+theme_override_font_sizes/font_size = 20
+text = "Countdown: 03:00"
+
+[node name="LifePotionLabel" type="Label" parent="MarginContainer/PanelContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = SubResource("FontVariation_ui")
+theme_override_font_sizes/font_size = 20
+text = "Life Potion: 00:35"
+
+[node name="CountdownTimer" type="Timer" parent="."]
+wait_time = 1.0

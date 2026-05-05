@@ -29,7 +29,12 @@ func update_language():
 		return
 
 	$Panel/Label.text = localization.tr_key("menu.title", "The Last Knight’s Quest")
-	$MenuContainer/Start_button.text = localization.tr_key("menu.start", "Start")
+	$Panel/FailMessage.text = localization.tr_key("fail.message", "Another Brave Knight has Fallen. The princess remains hostage of the Dragon")
+	$Panel/HighestLevelLabel.text = "%s: %d" % [
+		localization.tr_key("fail.highest_level", "Highest Quest Reached"),
+		GameSession.get_highest_level_reached()
+	]
+	$MenuContainer/Start_button.text = localization.tr_key("fail.restart", "Restart")
 	$MenuContainer/Options_button.text = localization.tr_key("menu.options", "Options")
 	$MenuContainer/Language_button.text = localization.get_language_button_text()
 	$MenuContainer/Endgame_button.text = localization.tr_key("menu.quit", "End Game")
@@ -100,9 +105,7 @@ func _on_options_button_pressed() -> void:
 
 func _on_start_button_pressed() -> void:
 	_play_click()
-	GameSession.start_new_run()
-	get_tree().change_scene_to_file("res://Assets/scenes/Background.tscn")
-	print("open new scene")
+	get_tree().change_scene_to_file(GameSession.get_restart_scene_path())
 
 func _on_endgame_button_pressed() -> void:
 	_play_click()
