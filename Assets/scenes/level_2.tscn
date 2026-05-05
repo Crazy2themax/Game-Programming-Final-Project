@@ -503,7 +503,9 @@ texture = ExtResource("7_bm7mi")
 10:30/0 = 0
 11:30/0 = 0
 12:30/0 = 0
+12:30/0/physics_layer_0/polygon_0/points = PackedVector2Array(-3.956892, -8, 8, -8, 8, 8, -5.75548, 8, -6.2950554, -3.4173155, -4.4964685, -8)
 13:30/0 = 0
+13:30/0/physics_layer_0/polygon_0/points = PackedVector2Array(6.115196, -4.13675, 5.935339, 8, -8, 8, -8, -8, 3.956892, -8)
 14:30/0 = 0
 15:30/0 = 0
 16:30/0 = 0
@@ -517,7 +519,9 @@ texture = ExtResource("7_bm7mi")
 10:31/0 = 0
 11:31/0 = 0
 12:31/0 = 0
+12:31/0/physics_layer_0/polygon_0/points = PackedVector2Array(-5.3957615, -8, -5.5756197, 8, 8, 8, 8, -8)
 13:31/0 = 0
+13:31/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, -8, 8, 5.3957615, 8, 5.3957615, -8)
 14:31/0 = 0
 15:31/0 = 0
 16:31/0 = 0
@@ -535,7 +539,9 @@ texture = ExtResource("7_bm7mi")
 10:32/0 = 0
 11:32/0 = 0
 12:32/0 = 0
+12:32/0/physics_layer_0/polygon_0/points = PackedVector2Array(-5.3957615, -8, -5.5756197, 8, 8, 8, 8, -8)
 13:32/0 = 0
+13:32/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, -8, 8, 5.3957615, 8, 5.3957615, -8)
 14:32/0 = 0
 15:32/0 = 0
 16:32/0 = 0
@@ -553,7 +559,9 @@ texture = ExtResource("7_bm7mi")
 10:33/0 = 0
 11:33/0 = 0
 12:33/0 = 0
+12:33/0/physics_layer_0/polygon_0/points = PackedVector2Array(-5.3957615, -8, -5.5756197, 8, 8, 8, 8, -8)
 13:33/0 = 0
+13:33/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, -8, 8, 5.3957615, 8, 5.3957615, -8)
 2:34/0 = 0
 3:34/0 = 0
 4:34/0 = 0
@@ -563,11 +571,17 @@ texture = ExtResource("7_bm7mi")
 10:34/0 = 0
 11:34/0 = 0
 12:34/0 = 0
+12:34/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, -8, -8, 8, -8, 8, 8, -8, 8)
 13:34/0 = 0
+13:34/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, -8, -8, 8, -8, 8, 8, -8, 8)
 14:34/0 = 0
+14:34/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, -8, -8, 8, -8, 8, 8, -8, 8)
 15:34/0 = 0
+15:34/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, -8, -8, 8, -8, 8, 8, -8, 8)
 16:34/0 = 0
+16:34/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, -8, -8, 8, -8, 8, 8, -8, 8)
 17:34/0 = 0
+17:34/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, -8, -8, 8, -8, 8, 8, -8, 8)
 2:35/0 = 0
 3:35/0 = 0
 4:35/0 = 0
@@ -577,11 +591,17 @@ texture = ExtResource("7_bm7mi")
 10:35/0 = 0
 11:35/0 = 0
 12:35/0 = 0
+12:35/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, -8, -8, 8, -8, 8, 8, -8, 8)
 13:35/0 = 0
+13:35/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, -8, -8, 8, -8, 8, 8, -8, 8)
 14:35/0 = 0
+14:35/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, -8, -8, 8, -8, 8, 8, -8, 8)
 15:35/0 = 0
+15:35/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, -8, -8, 8, -8, 8, 8, -8, 8)
 16:35/0 = 0
+16:35/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, -8, -8, 8, -8, 8, 8, -8, 8)
 17:35/0 = 0
+17:35/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, -8, -8, 8, -8, 8, 8, -8, 8)
 6:30/0 = 0
 1:30/0 = 0
 
@@ -590,66 +610,106 @@ physics_layer_0/collision_layer = 1
 physics_layer_0/physics_material = SubResource("PhysicsMaterial_iuiu5")
 sources/1 = SubResource("TileSetAtlasSource_gre0b")
 
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_y6uo0"]
+distance = 3.0
+
 [node name="level 2" type="Node2D" unique_id=1035286738]
 script = ExtResource("1_y6uo0")
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="." unique_id=937682882]
 
 [node name="sky" type="ParallaxLayer" parent="ParallaxBackground" unique_id=880036308]
+motion_mirroring = Vector2(1152, 0)
 
 [node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/sky" unique_id=1905643930]
+modulate = Color(0.11489687, 0.1148968, 0.11489678, 1)
 position = Vector2(575.99994, 324)
 scale = Vector2(3.0000002, 3)
 texture = ExtResource("1_iuiu5")
 metadata/_edit_lock_ = true
 
 [node name="background cloud" type="ParallaxLayer" parent="ParallaxBackground" unique_id=1405136294]
+motion_mirroring = Vector2(1152, 0)
 
 [node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/background cloud" unique_id=876980679]
+modulate = Color(0.4661808, 0.46618086, 0.46618068, 1)
 position = Vector2(576.00006, 324)
 scale = Vector2(3, 3)
 texture = ExtResource("2_y6uo0")
 metadata/_edit_lock_ = true
 
 [node name="mountains" type="ParallaxLayer" parent="ParallaxBackground" unique_id=553514482]
+motion_mirroring = Vector2(1152, 0)
 
 [node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/mountains" unique_id=704659684]
+modulate = Color(0.3529412, 0.3529412, 0.3529412, 0.9843137)
 position = Vector2(576, 324)
 scale = Vector2(3, 3)
 texture = ExtResource("3_trjvv")
 metadata/_edit_lock_ = true
 
 [node name="cloud background" type="ParallaxLayer" parent="ParallaxBackground" unique_id=373114599]
+motion_mirroring = Vector2(1152, 0)
 
 [node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/cloud background" unique_id=298247362]
+modulate = Color(0.41215247, 0.41215247, 0.41215247, 1)
 position = Vector2(576.00006, 324.5)
 scale = Vector2(3.0000002, 2.9953704)
 texture = ExtResource("4_qm0q2")
 metadata/_edit_lock_ = true
 
 [node name="cloud middle" type="ParallaxLayer" parent="ParallaxBackground" unique_id=389174241]
+motion_mirroring = Vector2(1152, 0)
 
 [node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/cloud middle" unique_id=699014888]
-position = Vector2(578.5, 324.5)
-scale = Vector2(2.986979, 2.9953704)
+modulate = Color(0.47007608, 0.4700758, 0.47007585, 1)
+position = Vector2(576, 324)
+scale = Vector2(3, 2.9999998)
 texture = ExtResource("5_v3ism")
 metadata/_edit_lock_ = true
 
 [node name="cloud front" type="ParallaxLayer" parent="ParallaxBackground" unique_id=1764542785]
+motion_mirroring = Vector2(1152, 0)
 
 [node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/cloud front" unique_id=1884294065]
-position = Vector2(578.5, 324.5)
-scale = Vector2(2.986979, 2.9953704)
+modulate = Color(0.42365035, 0.4236507, 0.42365062, 1)
+position = Vector2(576, 324)
+scale = Vector2(3, 2.9999998)
 texture = ExtResource("6_p7f2n")
 metadata/_edit_lock_ = true
 
 [node name="TileMap" type="TileMapLayer" parent="." unique_id=307765502]
 position = Vector2(0, 525)
-tile_map_data = PackedByteArray("AAABAAUAAQACAB4AAAACAAUAAQADAB4AAAADAAUAAQAEAB4AAAAEAAUAAQAFAB4AAAArAAQAAQACAB4AAAAsAAQAAQADAB4AAAAtAAQAAQAEAB4AAAAuAAQAAQAFAB4AAAA7AAQAAQACAB4AAAA8AAQAAQADAB4AAAA9AAQAAQAEAB4AAAA+AAQAAQAFAB4AAAAKAAUAAQACAB4AAAALAAUAAQADAB4AAAAMAAUAAQAEAB4AAAANAAUAAQAFAB4AAAAQAAEAAQACAB4AAAARAAEAAQADAB4AAAASAAEAAQAEAB4AAAATAAEAAQAFAB4AAAAVAP7/AQACAB4AAAAWAP7/AQADAB4AAAAXAP7/AQAEAB4AAAAYAP7/AQAFAB4AAAAbAPz/AQACAB4AAAAcAPz/AQADAB4AAAAdAPz/AQAEAB4AAAAeAPz/AQAFAB4AAAAkAP3/AQACAB4AAAAqAP3/AQAFAB4AAAAlAP3/AQAFAB4AAAAxAAAAAQAFAB4AAAA3APr/AQAFAB4AAAApAP3/AQACAB4AAAAwAAAAAQACAB4AAAA0AP3/AQACAB4AAAA2APr/AQACAB4AAAA1AP3/AQAFAB4AAAA=")
+tile_map_data = PackedByteArray("AAABAAUAAQACAB4AAAACAAUAAQADAB4AAAADAAUAAQAEAB4AAAAEAAUAAQAFAB4AAAAVAP7/AQACAB4AAAAWAP7/AQADAB4AAAAXAP7/AQAEAB4AAAAYAP7/AQAFAB4AAAAJAPz/AQAMAB4AAAAKAPz/AQANAB4AAAACAPj/AQAMAB4AAAADAPj/AQANAB4AAAAJAAQAAQAMAB4AAAAKAAQAAQANAB4AAAAQAAEAAQAMAB4AAAARAAEAAQANAB4AAAAAAPT/AQAMAB4AAAABAPT/AQANAB4AAAAFAPD/AQAMAB4AAAAGAPD/AQANAB4AAAAdAO//AQAMAB4AAAAeAO//AQANAB4AAAAtAO7/AQAMAB4AAAAuAO7/AQANAB4AAAAyAOr/AQAMAB4AAAAzAOr/AQANAB4AAABEAAIAAQAMAB4AAABFAAIAAQANAB4AAABRAP3/AQAMAB4AAABSAP3/AQANAB4AAABRAPH/AQAMACEAAABSAPH/AQANACEAAABMAAEAAQAMAB4AAABNAAEAAQANAB4AAABWAPr/AQAMAB4AAABXAPr/AQANAB4AAABWAPT/AQAMAB4AAABXAPT/AQANAB4AAABaAO3/AQAMAB4AAABbAO3/AQANAB4AAABkAO3/AQAMAB4AAABlAO3/AQANAB4AAABvAO3/AQAMAB4AAABwAO3/AQANAB4AAAB5AO3/AQAMAB4AAAB6AO3/AQANAB4AAAAQAPr/AQAMAB4AAAARAPr/AQANAB4AAAAQAPD/AQAMAB4AAAARAPD/AQANAB4AAAAYAPH/AQAMAB4AAAAZAPH/AQANAB4AAAAhAOz/AQAMAB4AAAAiAOz/AQANAB4AAABOAO3/AQAMAB4AAABPAO3/AQANAB4AAABSAOn/AQAMAB4AAABTAOn/AQANAB4AAACAAO3/AQAMACIAAACBAO3/AQANACIAAACCAO3/AQAOACIAAACDAO3/AQAPACIAAACEAO3/AQAQACIAAACFAO3/AQARACIAAABeAPr/AQAMAB4AAABfAPr/AQANAB4AAABtAPj/AQAMAB4AAABuAPj/AQANAB4AAAByAPr/AQAMAB4AAABzAPr/AQANAB4AAAB6APr/AQAMAB4AAAB7APr/AQANAB4AAABpAPb/AQAMAB4AAABpAPf/AQAMAB8AAABpAPj/AQAMACAAAABpAPn/AQAMACEAAABqAPb/AQANAB4AAABqAPf/AQANAB8AAABqAPj/AQANACAAAABqAPn/AQANACEAAABtAPn/AQAMACEAAABuAPn/AQANACEAAAByAPv/AQAMACEAAABzAPv/AQANACEAAABeAPv/AQAMACEAAABfAPv/AQANACEAAABWAPv/AQAMACEAAABXAPv/AQANACEAAABRAP7/AQAMACEAAABSAP7/AQANACEAAABMAAIAAQAMACEAAABNAAIAAQANACEAAABRAPf/AQAMACEAAABSAPf/AQANACEAAABRAPb/AQAMAB4AAABSAPb/AQANAB4AAABWAPX/AQAMACEAAABXAPX/AQANACEAAABOAO7/AQAMACEAAABPAO7/AQANACEAAABaAO7/AQAMACEAAABbAO7/AQANACEAAABkAO7/AQAMACEAAABlAO7/AQANACEAAABSAOr/AQAMACEAAABTAOr/AQANACEAAABvAO7/AQAMACEAAABwAO7/AQANACEAAAB5AO7/AQAMACEAAAB6AO7/AQANACEAAABEAAMAAQAMACEAAABFAAMAAQANACEAAAAtAO//AQAMACEAAAAuAO//AQANACEAAAAyAOv/AQAMACEAAAAzAOv/AQANACEAAAAhAO3/AQAMACEAAAAiAO3/AQANACEAAAAdAPD/AQAMACEAAAAeAPD/AQANACEAAAAYAPL/AQAMACEAAAAZAPL/AQANACEAAAAQAPH/AQAMACEAAAARAPH/AQANACEAAAAFAPH/AQAMACEAAAAGAPH/AQANACEAAAAAAPX/AQAMACEAAAABAPX/AQANACEAAAACAPn/AQAMACEAAAADAPn/AQANACEAAAAQAPv/AQAMACEAAAARAPv/AQANACEAAAAJAP3/AQAMACEAAAAKAP3/AQANACEAAAAQAAIAAQAMACEAAAARAAIAAQANACEAAAAJAAUAAQAMACEAAAAKAAUAAQANACEAAACAAO7/AQAMACMAAACBAO7/AQANACMAAACCAO7/AQAOACMAAACDAO7/AQAPACMAAACEAO7/AQAQACMAAACFAO7/AQARACMAAAABAAYAAQACACMAAAACAAYAAQADACMAAAADAAYAAQAEACMAAAAEAAYAAQAFACMAAAAVAP//AQACACMAAAAWAP//AQADACMAAAAXAP//AQAEACMAAAAYAP//AQAFACMAAAB6APv/AQAMACEAAAB7APv/AQANACEAAABRAPD/AQAMAB4AAABSAPD/AQANAB4AAAA=")
 tile_set = SubResource("TileSet_lwule")
 
 [node name="Player" parent="." unique_id=1946971537 instance=ExtResource("8_v4v63")]
-position = Vector2(49, 582)
+position = Vector2(1221, 394)
 
 [node name="Camera2D" type="Camera2D" parent="Player" unique_id=232139536]
-position = Vector2(-7, 13)
+position = Vector2(228, -198)
+zoom = Vector2(1.7, 1.7)
+limit_left = 0
+limit_top = 0
+limit_bottom = 648
+
+[node name="CPUParticles2D" type="CPUParticles2D" parent="." unique_id=1129127467]
+position = Vector2(1196, 2)
+amount = 300
+lifetime = 1.24
+speed_scale = 0.3
+randomness = 0.5
+emission_shape = 3
+emission_rect_extents = Vector2(1200, 1)
+direction = Vector2(45, 0)
+angular_velocity_min = -578.76
+angular_velocity_max = 227.37
+scale_amount_max = 5.0
+
+[node name="Area2D" type="Area2D" parent="." unique_id=1359455376]
+position = Vector2(-1, 651)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1002811044]
+shape = SubResource("WorldBoundaryShape2D_y6uo0")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
