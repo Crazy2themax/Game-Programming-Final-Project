@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://dqlvxnkvo2014"]
 
 [ext_resource type="Script" uid="uid://7iimlm0cerb4" path="res://Assets/scripts/player.gd" id="1_jyxux"]
+[ext_resource type="AudioStream" path="res://Assets/sounds/sound effects/player-sword-swing-attack-sfx.mp3" id="2_attack_sfx"]
 [ext_resource type="Texture2D" uid="uid://dcm630uuknjt3" path="res://Assets/character-animation-extended/ATTACK-(horizontal=6,vertical=1).png" id="2_attack"]
 [ext_resource type="Texture2D" uid="uid://ble3m7721lnxn" path="res://Assets/character-animation-extended/DEATH-(horizontal=12,vertical=1).png" id="3_death"]
 [ext_resource type="Texture2D" uid="uid://cyuwcf2y1qf3a" path="res://Assets/character-animation-extended/HURT-(horizontal=4,vertical=1).png" id="4_hurt"]
@@ -348,3 +349,7 @@ shape = SubResource("CapsuleShape2D_543sj")
 sprite_frames = SubResource("SpriteFrames_f3mpq")
 animation = &"hurt"
 autoplay = "idle"
+
+[node name="AttackSfx" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("2_attack_sfx")
+bus = &"Sound effect"

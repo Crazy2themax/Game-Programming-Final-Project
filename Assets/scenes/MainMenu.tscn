@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://d2nb6ssr05csy" path="res://Assets/scenes/main_menu.gd" id="1_8ryqc"]
 [ext_resource type="Texture2D" uid="uid://bec7ql00njwmh" path="res://Assets/Background/medieval-historical-rendering-landscape (1).jpg" id="2_cgy6o"]
 [ext_resource type="AudioStream" uid="uid://bmylsbekho173" path="res://Assets/sounds/background/awesomeness.mp3" id="3_ow34m"]
-[ext_resource type="AudioStream" uid="uid://ckql0ima7t2kg" path="res://Assets/sounds/sound effects/dragon-studio-button-press-382713.mp3" id="4_l72w3"]
+[ext_resource type="AudioStream" uid="uid://kxedmpkvajvm" path="res://Assets/sounds/sound effects/dragon-studio-button-press-382713.mp3" id="4_l72w3"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_0ykhv"]
 
@@ -52,8 +52,8 @@ theme_override_styles/panel = SubResource("StyleBoxTexture_0ykhv")
 
 [node name="TextureRect" type="TextureRect" parent="Panel" unique_id=785248331]
 layout_mode = 0
-offset_right = 1152.0
-offset_bottom = 648.0
+offset_right = 1458.0
+offset_bottom = 1085.0
 texture = ExtResource("2_cgy6o")
 expand_mode = 1
 
@@ -80,9 +80,9 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -110.0
-offset_top = -44.0
+offset_top = -76.0
 offset_right = 130.5
-offset_bottom = 69.0
+offset_bottom = 108.0
 grow_horizontal = 2
 grow_vertical = 2
 
@@ -106,6 +106,15 @@ theme_override_styles/normal = SubResource("StyleBoxFlat_eiy7p")
 text = "Options
 
 "
+
+[node name="Language_button" type="Button" parent="MenuContainer" unique_id=417886745]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0.96474224, 0.96474224, 0.96474224, 1)
+theme_override_fonts/font = SubResource("FontVariation_826wr")
+theme_override_font_sizes/font_size = 32
+theme_override_styles/normal = SubResource("StyleBoxFlat_eiy7p")
+text = "Language: English"
 
 [node name="Endgame_button" type="Button" parent="MenuContainer" unique_id=732178096]
 layout_mode = 2
@@ -135,6 +144,7 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="Languages_label" type="Label" parent="Options Panel" unique_id=513424132]
+visible = false
 layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
@@ -150,6 +160,7 @@ text = "Languages"
 horizontal_alignment = 1
 
 [node name="EnglishButton" type="Button" parent="Options Panel" unique_id=499415064]
+visible = false
 layout_mode = 0
 offset_left = 8.5
 offset_top = 59.0
@@ -164,6 +175,7 @@ theme_override_styles/normal = SubResource("StyleBoxFlat_eiy7p")
 text = "English"
 
 [node name="FrenchButton" type="Button" parent="Options Panel" unique_id=836387943]
+visible = false
 layout_mode = 0
 offset_left = 138.5
 offset_top = 57.0
@@ -224,13 +236,14 @@ text = "Music"
 
 [node name="Current Languages label" type="Label" parent="Options Panel" unique_id=769381657]
 layout_mode = 0
-offset_left = 58.5
+offset_left = 26.0
 offset_top = 118.0
-offset_right = 166.5
+offset_right = 250.0
 offset_bottom = 136.0
 size_flags_horizontal = 4
 theme_override_fonts/font = SubResource("FontVariation_7r1g0")
 text = "Current Language"
+horizontal_alignment = 1
 
 [node name="Fullscreen label" type="Label" parent="Options Panel" unique_id=1474025073]
 layout_mode = 0
@@ -322,6 +335,7 @@ theme_override_colors/checkbox_checked_color = Color(1, 1, 1, 1)
 theme_override_colors/checkbox_unchecked_color = Color(1, 1, 1, 1)
 
 [node name="FlagImage" type="TextureRect" parent="Options Panel" unique_id=1335159370]
+visible = false
 layout_mode = 0
 offset_left = 181.5
 offset_top = 118.0
@@ -331,6 +345,7 @@ expand_mode = 2
 
 [connection signal="pressed" from="MenuContainer/Start_button" to="." method="_on_start_button_pressed"]
 [connection signal="pressed" from="MenuContainer/Options_button" to="." method="_on_options_button_pressed"]
+[connection signal="pressed" from="MenuContainer/Language_button" to="." method="_on_language_button_pressed"]
 [connection signal="pressed" from="MenuContainer/Endgame_button" to="." method="_on_endgame_button_pressed"]
 [connection signal="pressed" from="Options Panel/EnglishButton" to="." method="_on_english_button_pressed"]
 [connection signal="pressed" from="Options Panel/FrenchButton" to="." method="_on_french_button_pressed"]

@@ -9,6 +9,7 @@ enum State { IDLE, RUN, ATTACK,  JUMP }
 var current_state: State = State.IDLE
 
 @onready var anim: AnimatedSprite2D = $AnimatedSprite2D  # changed
+@onready var attack_sfx: AudioStreamPlayer2D = $AttackSfx
 
 func _ready() -> void:
 	anim.animation_finished.connect(_on_animation_finished)
@@ -70,9 +71,14 @@ func _on_animation_finished() -> void:        # AnimatedSprite2D signal has no a
 			pass                              # stay dead
 
 func change_state(new_state: State) -> void:
+	if current_state == new_state:
+		return
+
 	current_state = new_state
 	if new_state == State.JUMP:
 		velocity.y = JUMP_VELOCITY
+	elif new_state == State.ATTACK:
+		attack_sfx.play()
 
 func play_anim(anim_name: String) -> void:
 	if anim.animation != anim_name:           # AnimatedSprite2D uses .animation not .current_animation

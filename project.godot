@@ -17,6 +17,7 @@ config/icon="res://icon.svg"
 
 [autoload]
 
+Localization="*res://Assets/scripts/Localization.gd"
 MusicManager="*uid://b60yaplr0jxy8"
 
 [display]

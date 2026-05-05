@@ -1,0 +1,24 @@
+key,en,fr
+menu.title,IronVeil,Le Voile de Fer
+menu.start,Start,Commencer
+menu.options,Options,Options
+menu.language,Language,Langue
+menu.quit,End Game,Quitter le jeu
+options.audio,Audio,Audio
+options.master,Master,Principal
+options.music,Music,Musique
+options.sfx,Sound Effects,Effets sonores
+options.fullscreen,Fullscreen,Plein ecran
+options.save,Save,Sauvegarder
+options.current_language,Current Language,Langue actuelle
+language.name.en,English,Anglais
+language.name.fr,French,Francais
+tutorial.move_left,Move Left,Aller a gauche
+tutorial.move_right,Move Right,Aller a droite
+tutorial.jump,Jump,Sauter
+tutorial.attack,Attack,Attaquer
+input.space,Space,Espace
+input.left_arrow,Left Arrow,Fleche gauche
+input.right_arrow,Right Arrow,Fleche droite
+input.up_arrow,Up Arrow,Fleche haute
+input.left_mouse,Left Mouse Button,Bouton gauche de la souris

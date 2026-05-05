@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://dilj1ru4rjcig"
+path="res://.godot/imported/player-sword-swing-attack-sfx.mp3-7d51aa072abe2d598c5d4000e1f247d5.mp3str"
+
+[deps]
+
+source_file="res://Assets/sounds/sound effects/player-sword-swing-attack-sfx.mp3"
+dest_files=["res://.godot/imported/player-sword-swing-attack-sfx.mp3-7d51aa072abe2d598c5d4000e1f247d5.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

@@ -1052,10 +1052,7 @@ offset_left = 592.0
 offset_top = 372.0
 offset_right = 817.0
 offset_bottom = 504.0
-text = "Left Arrow : Move Left
-Right Arrow : Move Right
-Up Arrow : Jump
-Space Bar : Attack"
+text = ""
 
 [node name="Button" type="Button" parent="CanvasLayer" unique_id=946760802]
 offset_left = -12.0
