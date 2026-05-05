@@ -684,10 +684,10 @@ tile_map_data = PackedByteArray("AAABAAUAAQACAB4AAAACAAUAAQADAB4AAAADAAUAAQAEAB4
 tile_set = SubResource("TileSet_lwule")
 
 [node name="Player" parent="." unique_id=1946971537 instance=ExtResource("8_v4v63")]
-position = Vector2(1221, 394)
+position = Vector2(45, 570)
 
 [node name="Camera2D" type="Camera2D" parent="Player" unique_id=232139536]
-position = Vector2(228, -198)
+position = Vector2(0, -6)
 zoom = Vector2(1.7, 1.7)
 limit_left = 0
 limit_top = 0
@@ -700,7 +700,7 @@ lifetime = 1.24
 speed_scale = 0.3
 randomness = 0.5
 emission_shape = 3
-emission_rect_extents = Vector2(1200, 1)
+emission_rect_extents = Vector2(1300, 1)
 direction = Vector2(45, 0)
 angular_velocity_min = -578.76
 angular_velocity_max = 227.37
