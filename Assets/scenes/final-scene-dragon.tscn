@@ -1,0 +1,222 @@
+[gd_scene format=3 uid="uid://c8tnpmkk12ma1"]
+
+[ext_resource type="Texture2D" uid="uid://bwvvmt01ufron" path="res://Assets/final-level/death-dragon-animation(1,3).png" id="1_death"]
+[ext_resource type="Script" uid="uid://bvwf30yfgj6ec" path="res://Assets/scripts/dragon.gd" id="1_dragon"]
+[ext_resource type="AudioStream" path="res://Assets/sounds/sound effects/final-level/dragon-attack-sfx-fireball-destruction-omnimous-sfx.mp3" id="2_attack_sfx"]
+[ext_resource type="Texture2D" uid="uid://djjy0kegyss7u" path="res://Assets/final-level/dragon-fireball-launch-animation(1,6).png" id="2_attack"]
+[ext_resource type="Script" uid="uid://cka7n8ws4jjd6" path="res://Assets/scripts/fireball.gd" id="2_fireball_script"]
+[ext_resource type="AudioStream" path="res://Assets/sounds/sound effects/final-level/dragon-roar-sfx.mp3" id="3_roar_sfx"]
+[ext_resource type="Texture2D" uid="uid://dg3n3efelyut" path="res://Assets/final-level/fireball_only-sprite-animation(1,6).png" id="5_fireball"]
+
+[sub_resource type="RectangleShape2D" id="RS_dragon_body"]
+size = Vector2(165, 86)
+
+[sub_resource type="AtlasTexture" id="AT_attack_0"]
+atlas = ExtResource("2_attack")
+region = Rect2(0, 0, 254, 194)
+
+[sub_resource type="AtlasTexture" id="AT_attack_1"]
+atlas = ExtResource("2_attack")
+region = Rect2(254, 0, 254, 194)
+
+[sub_resource type="AtlasTexture" id="AT_attack_2"]
+atlas = ExtResource("2_attack")
+region = Rect2(508, 0, 254, 194)
+
+[sub_resource type="AtlasTexture" id="AT_attack_3"]
+atlas = ExtResource("2_attack")
+region = Rect2(762, 0, 254, 194)
+
+[sub_resource type="AtlasTexture" id="AT_attack_4"]
+atlas = ExtResource("2_attack")
+region = Rect2(1016, 0, 254, 194)
+
+[sub_resource type="AtlasTexture" id="AT_attack_5"]
+atlas = ExtResource("2_attack")
+region = Rect2(1270, 0, 258, 194)
+
+[sub_resource type="AtlasTexture" id="AT_death_0"]
+atlas = ExtResource("1_death")
+region = Rect2(0, 0, 250, 193)
+
+[sub_resource type="AtlasTexture" id="AT_death_1"]
+atlas = ExtResource("1_death")
+region = Rect2(250, 0, 250, 193)
+
+[sub_resource type="AtlasTexture" id="AT_death_2"]
+atlas = ExtResource("1_death")
+region = Rect2(500, 0, 250, 193)
+
+[sub_resource type="SpriteFrames" id="SF_dragon"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AT_attack_0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AT_attack_1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AT_attack_2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AT_attack_3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AT_attack_4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AT_attack_5")
+}],
+"loop": false,
+"name": &"attack",
+"speed": 8.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AT_death_0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AT_death_1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AT_death_2")
+}],
+"loop": false,
+"name": &"death",
+"speed": 6.0
+}]
+
+[sub_resource type="AtlasTexture" id="AT_fireball_0"]
+atlas = ExtResource("5_fireball")
+region = Rect2(0, 0, 150, 150)
+
+[sub_resource type="AtlasTexture" id="AT_fireball_1"]
+atlas = ExtResource("5_fireball")
+region = Rect2(150, 0, 150, 150)
+
+[sub_resource type="AtlasTexture" id="AT_fireball_2"]
+atlas = ExtResource("5_fireball")
+region = Rect2(300, 0, 150, 150)
+
+[sub_resource type="AtlasTexture" id="AT_fireball_3"]
+atlas = ExtResource("5_fireball")
+region = Rect2(450, 0, 150, 150)
+
+[sub_resource type="AtlasTexture" id="AT_fireball_4"]
+atlas = ExtResource("5_fireball")
+region = Rect2(600, 0, 150, 150)
+
+[sub_resource type="AtlasTexture" id="AT_fireball_5"]
+atlas = ExtResource("5_fireball")
+region = Rect2(750, 0, 150, 150)
+
+[sub_resource type="SpriteFrames" id="SF_fireball"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AT_fireball_0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AT_fireball_1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AT_fireball_2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AT_fireball_3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AT_fireball_4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AT_fireball_5")
+}],
+"loop": true,
+"name": &"fireball",
+"speed": 10.0
+}]
+
+[sub_resource type="CircleShape2D" id="CS_fireball_hit"]
+radius = 19.313208
+
+[sub_resource type="Animation" id="Anim_boss_death"]
+resource_name = "boss_death"
+length = 0.5
+step = 0.05
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("DragonAnimatedSprite:animation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = false
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [&"death"]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("DragonAnimatedSprite:playing")
+tracks/1/interp = 1
+tracks/1/loop_wrap = false
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimLib_dragon"]
+_data = {
+&"boss_death": SubResource("Anim_boss_death")
+}
+
+[node name="Dragon" type="CharacterBody2D" unique_id=1690104061]
+position = Vector2(581, 518)
+script = ExtResource("1_dragon")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=3055182]
+position = Vector2(83.5, 8)
+shape = SubResource("RS_dragon_body")
+
+[node name="DragonAnimatedSprite" type="AnimatedSprite2D" parent="." unique_id=50884268]
+position = Vector2(53, -3)
+scale = Vector2(0.96062994, 1)
+sprite_frames = SubResource("SF_dragon")
+animation = &"attack"
+autoplay = "attack"
+frame = 5
+frame_progress = 1.0
+flip_h = true
+
+[node name="FireballLaunchPoint" type="Marker2D" parent="DragonAnimatedSprite" unique_id=1839370705]
+position = Vector2(-85.36066, 20)
+
+[node name="Fireball" type="Area2D" parent="DragonAnimatedSprite/FireballLaunchPoint" unique_id=421426828]
+position = Vector2(9.368852, 36)
+script = ExtResource("2_fireball_script")
+
+[node name="FireballAnimatedSprite" type="AnimatedSprite2D" parent="DragonAnimatedSprite/FireballLaunchPoint/Fireball" unique_id=52971147]
+position = Vector2(-46.72132, -36)
+scale = Vector2(0.34000003, 0.36333334)
+sprite_frames = SubResource("SF_fireball")
+animation = &"fireball"
+autoplay = "fireball"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DragonAnimatedSprite/FireballLaunchPoint/Fireball" unique_id=1945523514]
+position = Vector2(-45.680336, -36)
+shape = SubResource("CS_fireball_hit")
+
+[node name="AttackSfx" type="AudioStreamPlayer2D" parent="." unique_id=150420001]
+stream = ExtResource("2_attack_sfx")
+max_distance = 1800.0
+
+[node name="RecoveryRoarSfx" type="AudioStreamPlayer2D" parent="." unique_id=150420002]
+stream = ExtResource("3_roar_sfx")
+max_distance = 1800.0
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=245447157]
+libraries/ = SubResource("AnimLib_dragon")

@@ -9,6 +9,8 @@
 [ext_resource type="Texture2D" uid="uid://dd27muqw6qpew" path="res://Assets/Background/lvl 2 background/Glacial-mountains-parallax-background_vnitti/Layers/clouds_mg_1_lightened.png" id="6_p7f2n"]
 [ext_resource type="Texture2D" uid="uid://b1s8k3vkreug5" path="res://Assets/Background/GandalfHardcore FREE Platformer Assets/Floor Tiles2.png" id="7_bm7mi"]
 [ext_resource type="PackedScene" uid="uid://dqlvxnkvo2014" path="res://Assets/scenes/player.tscn" id="8_v4v63"]
+[ext_resource type="PackedScene" path="res://Assets/scenes/UI-interface.tscn" id="9_ui"]
+[ext_resource type="PackedScene" path="res://Assets/scenes/heart_pickup.tscn" id="10_heart"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_iuiu5"]
 
@@ -708,6 +710,13 @@ scale_amount_max = 5.0
 
 [node name="Area2D" type="Area2D" parent="." unique_id=1359455376]
 position = Vector2(-1, 651)
+
+[node name="HeartPickup" parent="." instance=ExtResource("10_heart")]
+position = Vector2(1619, 365)
+
+[node name="UI-interface" parent="." instance=ExtResource("9_ui")]
+level_number = 2
+countdown_seconds = 210
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1002811044]
 shape = SubResource("WorldBoundaryShape2D_y6uo0")

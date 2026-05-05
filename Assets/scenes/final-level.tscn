@@ -3,12 +3,14 @@
 [ext_resource type="Texture2D" uid="uid://c0wbhlyl4hv3e" path="res://Assets/final-level/background/wall-inner-castle-dungeon-view-parallax.png" id="1_dhtww"]
 [ext_resource type="Texture2D" uid="uid://b2tfmb3642clg" path="res://Assets/final-level/background/base-parallax.png" id="2_luopi"]
 [ext_resource type="PackedScene" uid="uid://dqlvxnkvo2014" path="res://Assets/scenes/player.tscn" id="3_player"]
+[ext_resource type="PackedScene" path="res://Assets/scenes/UI-interface.tscn" id="4_ui"]
+[ext_resource type="PackedScene" path="res://Assets/scenes/heart_pickup.tscn" id="5_heart"]
+[ext_resource type="AudioStream" path="res://Assets/sounds/background/final-level/background-loop-music-for-final-level-only.mp3" id="6_final_music"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_floor"]
 size = Vector2(10000, 21.5)
 
 [node name="FinalLevel" type="Node2D" unique_id=431650970]
-rotation = -0.0013729586
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="." unique_id=858811478]
 
@@ -16,7 +18,6 @@ rotation = -0.0013729586
 motion_mirroring = Vector2(1152, 0)
 
 [node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer" unique_id=1907245676]
-rotation = 0.0019439545
 scale = Vector2(2.077, 2)
 texture = ExtResource("1_dhtww")
 centered = false
@@ -39,5 +40,17 @@ shape = SubResource("RectangleShape2D_floor")
 
 [node name="Player" parent="." unique_id=202204149 instance=ExtResource("3_player")]
 scale = Vector2(4, 4)
+
+[node name="HeartPickup" parent="." instance=ExtResource("5_heart")]
+position = Vector2(380, 480)
+
+[node name="UI-interface" parent="." instance=ExtResource("4_ui")]
+level_number = 3
+countdown_seconds = 240
+
+[node name="FinalLevelMusic" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("6_final_music")
+autoplay = true
+bus = &"background"
 
 [node name="Camera2D" type="Camera2D" parent="Player" unique_id=552311914]

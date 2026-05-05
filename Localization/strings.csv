@@ -1,0 +1,32 @@
+key,en,fr
+menu.title,The Last Knight’s Quest,La derniere quete du dernier chevalier
+menu.start,Start,Commencer
+menu.options,Options,Options
+menu.language,Language,Langue
+menu.quit,End Game,Quitter le jeu
+options.audio,Audio,Audio
+options.master,Master,Principal
+options.music,Music,Musique
+options.sfx,Sound Effects,Effets sonores
+options.fullscreen,Fullscreen,Plein ecran
+options.save,Save,Sauvegarder
+options.current_language,Current Language,Langue actuelle
+language.name.en,English,Anglais
+language.name.fr,French,Francais
+tutorial.move_left,Move Left,Aller a gauche
+tutorial.move_right,Move Right,Aller a droite
+tutorial.jump,Jump,Sauter
+tutorial.attack,Attack,Attaquer
+input.space,Space,Espace
+input.left_arrow,Left Arrow,Fleche gauche
+input.right_arrow,Right Arrow,Fleche droite
+input.up_arrow,Up Arrow,Fleche haute
+input.left_mouse,Left Mouse Button,Bouton gauche de la souris
+hud.knights_life,Knight's Life,Vie du chevalier
+hud.quest,Quest,Quete
+hud.countdown,Countdown,Compte a rebours
+hud.life_potion,Life Potion,Potion de vie
+hud.ready,Ready,Pret
+fail.message,Another Brave Knight has Fallen. The princess remains hostage of the Dragon,Un autre brave chevalier est tombe. La princesse reste l'otage du dragon
+fail.restart,Restart,Recommencer
+fail.highest_level,Highest Quest Reached,Quete la plus elevee atteinte
