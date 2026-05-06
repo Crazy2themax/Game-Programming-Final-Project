@@ -2,6 +2,10 @@
 
 [ext_resource type="Script" uid="uid://bjqxbtiemvt2x" path="res://button.gd" id="1_y26ei"]
 
+[sub_resource type="Theme" id="Theme_y26ei"]
+
+[sub_resource type="Theme" id="Theme_yxx3c"]
+
 [node name="GameOver" type="Node2D" unique_id=535794217]
 
 [node name="Control" type="Control" parent="." unique_id=1138207640]
@@ -9,16 +13,13 @@ layout_mode = 3
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
+theme = SubResource("Theme_y26ei")
 
-[node name="RestartButton" type="Button" parent="Control" unique_id=2102354861]
+[node name="ColorRect" type="ColorRect" parent="Control" unique_id=693990854]
 layout_mode = 0
-offset_left = 416.0
-offset_top = 556.0
-offset_right = 712.0
-offset_bottom = 647.0
-text = "Restart
-"
-script = ExtResource("1_y26ei")
+offset_right = 1145.0
+offset_bottom = 1079.0
+color = Color(0, 0, 0, 1)
 
 [node name="Label" type="Label" parent="Control" unique_id=1025385016]
 layout_mode = 1
@@ -28,11 +29,28 @@ anchor_bottom = 27.025002
 offset_left = 3.0
 offset_top = 248.0
 offset_right = 3.0
-offset_bottom = -656.0
+offset_bottom = -560.0
+theme_override_colors/font_color = Color(0.7052855, 0.004446319, 3.85046e-07, 1)
 theme_override_font_sizes/font_size = 200
 text = "Game Over"
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="RestartButton" type="Button" parent="Control" unique_id=2102354861]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 28.826002
+anchor_bottom = 27.1
+offset_left = 416.0
+offset_top = 556.0
+offset_right = -441.04004
+offset_bottom = -437.0
+theme = SubResource("Theme_yxx3c")
+theme_override_colors/font_color = Color(0.8278754, 0, 0.06099178, 1)
+theme_override_colors/icon_normal_color = Color(0.46229059, 0.46229059, 0.46229059, 1)
+text = "Restart
+"
+script = ExtResource("1_y26ei")
 
 [node name="MainMenuButton" type="Button" parent="Control" unique_id=1437185990]
 layout_mode = 0
@@ -40,6 +58,7 @@ offset_left = 414.0
 offset_top = 685.0
 offset_right = 710.0
 offset_bottom = 776.0
+theme_override_colors/font_color = Color(0.6123221, 0, 0, 1)
 text = "Main Menu
 
 "
