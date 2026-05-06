@@ -11,6 +11,7 @@
 [ext_resource type="PackedScene" uid="uid://dqlvxnkvo2014" path="res://Assets/scenes/player.tscn" id="8_v4v63"]
 [ext_resource type="PackedScene" path="res://Assets/scenes/UI-interface.tscn" id="9_ui"]
 [ext_resource type="PackedScene" path="res://Assets/scenes/heart_pickup.tscn" id="10_heart"]
+[ext_resource type="AudioStream" uid="uid://1jfcsi6qglxp" path="res://Assets/sounds/background/level 2/dominic251-winter-468650.mp3" id="12_v3ism"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_iuiu5"]
 
@@ -699,6 +700,7 @@ limit_bottom = 648
 position = Vector2(1196, 2)
 amount = 300
 lifetime = 1.24
+preprocess = 2.0
 speed_scale = 0.3
 randomness = 0.5
 emission_shape = 3
@@ -711,14 +713,19 @@ scale_amount_max = 5.0
 [node name="Area2D" type="Area2D" parent="." unique_id=1359455376]
 position = Vector2(-1, 651)
 
-[node name="HeartPickup" parent="." instance=ExtResource("10_heart")]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1002811044]
+shape = SubResource("WorldBoundaryShape2D_y6uo0")
+
+[node name="HeartPickup" parent="." unique_id=233985862 instance=ExtResource("10_heart")]
 position = Vector2(1619, 365)
 
-[node name="UI-interface" parent="." instance=ExtResource("9_ui")]
+[node name="UI-interface" parent="." unique_id=139740576 instance=ExtResource("9_ui")]
 level_number = 2
 countdown_seconds = 210
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1002811044]
-shape = SubResource("WorldBoundaryShape2D_y6uo0")
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=1768872601]
+stream = ExtResource("12_v3ism")
+autoplay = true
+bus = &"background"
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

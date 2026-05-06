@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://vxdkk1ydylxl"
+path="res://.godot/imported/denielcz-bamboo-whoosh-429156.mp3-8e8f2edd00d9f446f214799bbc1deafe.mp3str"
+
+[deps]
+
+source_file="res://Assets/sounds/sound effects/lvl 2/denielcz-bamboo-whoosh-429156.mp3"
+dest_files=["res://.godot/imported/denielcz-bamboo-whoosh-429156.mp3-8e8f2edd00d9f446f214799bbc1deafe.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

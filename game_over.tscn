@@ -1,0 +1,48 @@
+[gd_scene format=3 uid="uid://c0v4vp1imrqgt"]
+
+[ext_resource type="Script" uid="uid://bjqxbtiemvt2x" path="res://button.gd" id="1_y26ei"]
+
+[node name="GameOver" type="Node2D" unique_id=535794217]
+
+[node name="Control" type="Control" parent="." unique_id=1138207640]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="RestartButton" type="Button" parent="Control" unique_id=2102354861]
+layout_mode = 0
+offset_left = 416.0
+offset_top = 556.0
+offset_right = 712.0
+offset_bottom = 647.0
+text = "Restart
+"
+script = ExtResource("1_y26ei")
+
+[node name="Label" type="Label" parent="Control" unique_id=1025385016]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 28.800001
+anchor_bottom = 27.025002
+offset_left = 3.0
+offset_top = 248.0
+offset_right = 3.0
+offset_bottom = -656.0
+theme_override_font_sizes/font_size = 200
+text = "Game Over"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="MainMenuButton" type="Button" parent="Control" unique_id=1437185990]
+layout_mode = 0
+offset_left = 414.0
+offset_top = 685.0
+offset_right = 710.0
+offset_bottom = 776.0
+text = "Main Menu
+
+"
+
+[connection signal="pressed" from="Control/RestartButton" to="Control/RestartButton" method="_on_RestartButton_pressed"]
+[connection signal="pressed" from="Control/MainMenuButton" to="Control/RestartButton" method="_on_main_menu_button_pressed"]

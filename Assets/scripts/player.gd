@@ -7,7 +7,7 @@ const JUMP_VELOCITY = -250.0
 enum State { IDLE, RUN, ATTACK, JUMP, HURT, DEAD }
 
 var current_state: State = State.IDLE
-
+@onready var jump_sfx: AudioStreamPlayer2D = $jump
 @onready var anim: AnimatedSprite2D = $AnimatedSprite2D
 @onready var attack_sfx: AudioStreamPlayer2D = $AttackSfx
 @onready var health: PlayerHealth = $PlayerHealth
@@ -92,6 +92,7 @@ func change_state(new_state: State) -> void:
 	current_state = new_state
 	if new_state == State.JUMP:
 		velocity.y = JUMP_VELOCITY
+		jump_sfx.play()
 	elif new_state == State.ATTACK:
 		if attack_sfx != null:
 			attack_sfx.play()

@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://3sclyhcgcqim"
+path="res://.godot/imported/dogwolf123-retro-jump-sound-03-474788.mp3-50ad24441f0b90a597b2c786a24d6e22.mp3str"
+
+[deps]
+
+source_file="res://Assets/sounds/sound effects/lvl 2/dogwolf123-retro-jump-sound-03-474788.mp3"
+dest_files=["res://.godot/imported/dogwolf123-retro-jump-sound-03-474788.mp3-50ad24441f0b90a597b2c786a24d6e22.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
