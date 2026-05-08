@@ -16,7 +16,7 @@
 [ext_resource type="Texture2D" uid="uid://twrtwifoep6x" path="res://Assets/Background/GandalfHardcore FREE Platformer Assets/tent.png" id="13_cjcy6"]
 [ext_resource type="Texture2D" uid="uid://lu1wmuu4ax85" path="res://Assets/Background/GandalfHardcore FREE Platformer Assets/axe.png" id="14_qkwuj"]
 [ext_resource type="Texture2D" uid="uid://dr7fqn4y7ncee" path="res://Assets/Background/GandalfHardcore FREE Platformer Assets/logs.png" id="15_fdanu"]
-[ext_resource type="Script" uid="uid://cxpxoaexofne1" path="res://Assets/scripts/background.gd" id="16_o7a3o"]
+[ext_resource type="Script" uid="uid://cxpxoaexofne1" path="res://Assets/scripts/GameOver.gd" id="16_o7a3o"]
 [ext_resource type="PackedScene" path="res://Assets/scenes/UI-interface.tscn" id="17_ui"]
 [ext_resource type="PackedScene" path="res://Assets/scenes/heart_pickup.tscn" id="18_heart"]
 
@@ -1054,7 +1054,6 @@ offset_left = 592.0
 offset_top = 372.0
 offset_right = 817.0
 offset_bottom = 504.0
-text = ""
 
 [node name="Button" type="Button" parent="CanvasLayer" unique_id=946760802]
 offset_left = -12.0
@@ -1090,9 +1089,7 @@ position = Vector2(602, 343)
 [node name="Player" parent="." unique_id=885258346 instance=ExtResource("8_mxry3")]
 position = Vector2(421, 547)
 
-[node name="HeartPickup" parent="." instance=ExtResource("18_heart")]
+[node name="HeartPickup" parent="." unique_id=561657513 instance=ExtResource("18_heart")]
 position = Vector2(803, 523)
 
-[node name="UI-interface" parent="." instance=ExtResource("17_ui")]
-level_number = 1
-countdown_seconds = 180
+[node name="UI-interface" parent="." unique_id=757328483 instance=ExtResource("17_ui")]
