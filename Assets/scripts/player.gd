@@ -7,6 +7,9 @@ const VICTORY_MENU_PATH = "res://Assets/scenes/VictoryMenu.tscn"
 
 enum State { IDLE, RUN, ATTACK, JUMP, HURT, DEAD }
 
+#for level 2 getting to level 3 
+var has_key: bool = false
+
 var current_state: State = State.IDLE
 var dragon_slayer_active := false
 var attack_targets_hit: Array[Node2D] = []
