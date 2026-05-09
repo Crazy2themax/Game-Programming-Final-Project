@@ -222,6 +222,7 @@ libraries/ = SubResource("AnimLib_dragon")
 
 [node name="BossHealth" type="Node" parent="." unique_id=150420003]
 script = ExtResource("1_health")
+max_health = 4
 invulnerability_duration = 0.15
 
 [node name="InvulnerabilityTimer" type="Timer" parent="BossHealth" unique_id=150420004]

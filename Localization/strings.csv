@@ -30,3 +30,6 @@ hud.ready,Ready,Pret
 fail.message,Another Brave Knight has Fallen. The princess remains hostage of the Dragon,Un autre brave chevalier est tombe. La princesse reste l'otage du dragon
 fail.restart,Restart,Recommencer
 fail.highest_level,Highest Quest Reached,Quete la plus elevee atteinte
+victory.title,Victory!,Victoire!
+victory.message,The Dragon Has Been Defeated. You saved the princess and brought peace back to the kingdom.,Le dragon a ete vaincu. Vous avez sauve la princesse et rendu la paix au royaume.
+victory.exit,EXIT,SORTIR

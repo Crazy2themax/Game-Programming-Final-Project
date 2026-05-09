@@ -116,7 +116,7 @@ func play_anim(anim_name: String) -> void:
 	if anim.animation != anim_name:
 		anim.play(anim_name)
 
-func apply_enemy_hit(amount: int = 1) -> bool:
+func apply_enemy_hit(amount: int = 1, death_cause: String = "an enemy") -> bool:
 	if current_state == State.DEAD:
 		return false
 
@@ -125,6 +125,7 @@ func apply_enemy_hit(amount: int = 1) -> bool:
 		return false
 
 	if health.is_dead():
+		GameSession.set_death_cause(death_cause)
 		_on_died()
 	else:
 		change_state(State.HURT)
@@ -167,8 +168,9 @@ func _check_attack_hits() -> void:
 		if target == null or attack_targets_hit.has(target):
 			continue
 		attack_targets_hit.append(target)
-		if dragon_slayer_active and target.has_method("apply_boss_hit"):
-			target.apply_boss_hit(1)
+		if target.has_method("apply_boss_hit"):
+			var boss_damage := 2 if dragon_slayer_active else 1
+			target.apply_boss_hit(boss_damage)
 
 func _set_attack_hitbox_enabled(is_enabled: bool) -> void:
 	if attack_hitbox == null or attack_hitbox_shape == null:
@@ -190,3 +192,8 @@ func _set_potion_visuals(is_enabled: bool) -> void:
 
 func _on_dragon_died() -> void:
 	clear_dragon_slayer_potion()
+	var tree := get_tree()
+	if tree == null:
+		return
+	await tree.create_timer(0.8).timeout
+	tree.change_scene_to_file(VICTORY_MENU_PATH)

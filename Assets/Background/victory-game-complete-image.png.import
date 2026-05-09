@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dw4yvqhrbsq6k"
-path="res://.godot/imported/ice-rocks.png-ba259620f245ce2e6d3821a530288946.ctex"
+uid="uid://bihdrufn21ak7"
+path="res://.godot/imported/victory-game-complete-image.png-fd87fa587d4f8954219beae20c89a2c2.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/obstacles-fall-objects/ice-rocks.png"
-dest_files=["res://.godot/imported/ice-rocks.png-ba259620f245ce2e6d3821a530288946.ctex"]
+source_file="res://Assets/Background/victory-game-complete-image.png"
+dest_files=["res://.godot/imported/victory-game-complete-image.png-fd87fa587d4f8954219beae20c89a2c2.ctex"]
 
 [params]
 

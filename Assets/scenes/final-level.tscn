@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://c8tnpmkk12ma1" path="res://Assets/scenes/final-scene-dragon.tscn" id="6_dragon"]
 [ext_resource type="PackedScene" path="res://Assets/scenes/magic_potion_pickup.tscn" id="7_magic_potion"]
 [ext_resource type="AudioStream" uid="uid://cgow2ef678h1i" path="res://Assets/sounds/background/final-level/background-loop-music-for-final-level-only.mp3" id="6_final_music"]
+[ext_resource type="Script" path="res://Assets/scripts/final_level.gd" id="8_final_level_script"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_floor"]
 size = Vector2(10000, 21.5)
@@ -16,6 +17,7 @@ size = Vector2(10000, 21.5)
 size = Vector2(1800, 21.5)
 
 [node name="FinalLevel" type="Node2D" unique_id=431650970]
+script = ExtResource("8_final_level_script")
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="." unique_id=858811478]
 
@@ -54,6 +56,10 @@ shape = SubResource("RectangleShape2D_dragon_floor")
 scale = Vector2(4, 4)
 
 [node name="Camera2D" type="Camera2D" parent="Player" unique_id=552311914]
+position = Vector2(0, -6)
+limit_left = 0
+limit_top = 0
+limit_bottom = 648
 
 [node name="HeartPickup" parent="." unique_id=144597706 instance=ExtResource("5_heart")]
 position = Vector2(380, 480)
@@ -62,12 +68,16 @@ position = Vector2(380, 480)
 position = Vector2(500, 480)
 
 [node name="Dragon" parent="." unique_id=2118275422 instance=ExtResource("6_dragon")]
-position = Vector2(1000, 518)
+position = Vector2(1400, 518)
 scale = Vector2(3, 3)
+
+[node name="RockContainer" type="Node2D" parent="." unique_id=2118275423]
+
+[node name="FloatingTileContainer" type="Node2D" parent="." unique_id=2118275424]
 
 [node name="UI-interface" parent="." unique_id=628786847 instance=ExtResource("4_ui")]
 level_number = 3
-countdown_seconds = 240
+countdown_seconds = 180
 
 [node name="FinalLevelMusic" type="AudioStreamPlayer" parent="." unique_id=940150803]
 stream = ExtResource("6_final_music")

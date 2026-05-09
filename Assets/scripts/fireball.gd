@@ -71,8 +71,12 @@ func reset_to_spawn() -> void:
 func _on_body_entered(body: Node2D) -> void:
 	if body == dragon_owner:
 		return
+	if body.is_in_group("fireball_pass_through"):
+		if body.has_method("hit_by_fireball"):
+			body.hit_by_fireball()
+		return
 	if body.has_method("apply_enemy_hit"):
-		body.apply_enemy_hit()
+		body.apply_enemy_hit(1, "the dragon's fireball")
 	reset_to_spawn()
 
 func _on_area_entered(area: Area2D) -> void:

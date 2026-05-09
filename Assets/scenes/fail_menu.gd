@@ -29,7 +29,11 @@ func update_language():
 		return
 
 	$Panel/Label.text = localization.tr_key("menu.title", "The Last Knight’s Quest")
-	$Panel/FailMessage.text = localization.tr_key("fail.message", "Another Brave Knight has Fallen. The princess remains hostage of the Dragon")
+	var fail_message = localization.tr_key("fail.message", "Another Brave Knight has Fallen. The princess remains hostage of the Dragon")
+	var death_cause = GameSession.get_death_cause()
+	if not death_cause.is_empty():
+		fail_message += "\n(Killed by %s)" % death_cause
+	$Panel/FailMessage.text = fail_message
 	$Panel/HighestLevelLabel.text = "%s: %d" % [
 		localization.tr_key("fail.highest_level", "Highest Quest Reached"),
 		GameSession.get_highest_level_reached()

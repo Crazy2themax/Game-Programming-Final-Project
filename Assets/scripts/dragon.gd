@@ -1,6 +1,7 @@
 extends CharacterBody2D
 
 signal dragon_died
+signal fireball_launched
 
 @export var fire_interval := 2.0
 
@@ -51,6 +52,7 @@ func launch_fireball() -> void:
 	if attack_sfx != null:
 		attack_sfx.play()
 	spawned_fireball.call("launch")
+	fireball_launched.emit()
 
 func apply_boss_hit(amount: int = 1) -> bool:
 	if boss_health == null or is_dead:

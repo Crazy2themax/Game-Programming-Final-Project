@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dpbk3b4kfnhvs"
-path="res://.godot/imported/falling-rocks-obstacle-4.png-d31be2852579003df2b51bbf24874c95.ctex"
+uid="uid://djwe81jvllvme"
+path="res://.godot/imported/float-tile.png-577ff6cd8fcb79ed08b08215dc4e62af.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/obstacles-fall-objects/falling-rocks-obstacle-4.png"
-dest_files=["res://.godot/imported/falling-rocks-obstacle-4.png-d31be2852579003df2b51bbf24874c95.ctex"]
+source_file="res://Assets/final-level/SPECIAL/float-tile.png"
+dest_files=["res://.godot/imported/float-tile.png-577ff6cd8fcb79ed08b08215dc4e62af.ctex"]
 
 [params]
 
