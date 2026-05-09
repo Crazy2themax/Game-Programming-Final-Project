@@ -1,11 +1,14 @@
 extends CharacterBody2D
 
 const SPEED = 150.0
-const GRAVITY = 400.0
+@export var gravity: float = 400.0
 const JUMP_VELOCITY = -300.0
 const VICTORY_MENU_PATH = "res://Assets/scenes/VictoryMenu.tscn"
 
 enum State { IDLE, RUN, ATTACK, JUMP, HURT, DEAD }
+
+#for level 2 getting to level 3 
+var has_key: bool = false
 
 var current_state: State = State.IDLE
 var dragon_slayer_active := false
@@ -29,7 +32,7 @@ func _ready() -> void:
 
 func _physics_process(delta: float) -> void:
 	if not is_on_floor():
-		velocity.y += GRAVITY * delta
+		velocity.y += gravity * delta
 	_update_attack_hitbox_position()
 	match current_state:
 		State.IDLE:   handle_idle()
