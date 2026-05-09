@@ -1,0 +1,59 @@
+[gd_scene format=3 uid="uid://dpby4x8vd3a2m"]
+
+[ext_resource type="Texture2D" uid="uid://28acdqdt5f8x" path="res://Assets/npc's/NPC's/Necromancer/Fireball_Sprite_Sheet.png" id="1_1xg0y"]
+[ext_resource type="Script" uid="uid://bn5otl7ppchcj" path="res://Assets/scripts/spell_attack.gd" id="1_nqkwp"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nqkwp"]
+atlas = ExtResource("1_1xg0y")
+region = Rect2(0, 96, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hqi5f"]
+atlas = ExtResource("1_1xg0y")
+region = Rect2(32, 96, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2ge02"]
+atlas = ExtResource("1_1xg0y")
+region = Rect2(64, 96, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cgkkp"]
+atlas = ExtResource("1_1xg0y")
+region = Rect2(96, 96, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_dtdks"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nqkwp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hqi5f")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2ge02")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cgkkp")
+}],
+"loop": true,
+"name": &"default",
+"speed": 7.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_7imtq"]
+radius = 5.0
+height = 23.0
+
+[node name="Spell Attack" type="Area2D" unique_id=2018937636]
+scale = Vector2(2, 2)
+collision_layer = 0
+script = ExtResource("1_nqkwp")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=212314930]
+texture_filter = 1
+sprite_frames = SubResource("SpriteFrames_dtdks")
+frame_progress = 0.254743
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1137202176]
+position = Vector2(-1.5, 0)
+rotation = 1.5707964
+shape = SubResource("CapsuleShape2D_7imtq")
