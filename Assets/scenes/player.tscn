@@ -9,14 +9,11 @@
 [ext_resource type="Texture2D" uid="uid://cr6ctvai2tmwb" path="res://Assets/character-animation-extended/JUMP(horizontal=5,vertical=1).png" id="6_jump"]
 [ext_resource type="Texture2D" uid="uid://b12spl72y85g5" path="res://Assets/character-animation-extended/RUN-WALK(horizontal=8,vertical=1).png" id="7_run"]
 [ext_resource type="Script" uid="uid://qn263vdxe7ia" path="res://Assets/scripts/player_health.gd" id="8_health"]
-[ext_resource type="Texture2D" path="res://Assets/pickup-object/magic-potion.png" id="9_potion_glow"]
+[ext_resource type="Texture2D" uid="uid://cwnx756yb61gl" path="res://Assets/pickup-object/magic-potion.png" id="9_potion_glow"]
 [ext_resource type="AudioStream" uid="uid://3sclyhcgcqim" path="res://Assets/sounds/sound effects/lvl 2/dogwolf123-retro-jump-sound-03-474788.mp3" id="10_jump_sfx"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_543sj"]
-height = 40.0
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_attack_hitbox"]
-size = Vector2(20, 18)
+height = 36.0
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_attack_0"]
 atlas = ExtResource("2_attack")
@@ -345,6 +342,9 @@ animations = [{
 "speed": 10.0
 }]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_attack_hitbox"]
+size = Vector2(20, 18)
+
 [node name="Player" type="CharacterBody2D" unique_id=1946971537]
 script = ExtResource("1_jyxux")
 
@@ -372,12 +372,12 @@ script = ExtResource("8_health")
 one_shot = true
 
 [node name="PotionGlow" type="PointLight2D" parent="." unique_id=64021218]
+visible = false
 position = Vector2(0, -8)
-texture = ExtResource("9_potion_glow")
 color = Color(1, 0.843137, 0.478431, 0.6)
 energy = 1.2
+texture = ExtResource("9_potion_glow")
 texture_scale = 3.0
-visible = false
 
 [node name="AttackHitbox" type="Area2D" parent="." unique_id=64021219]
 position = Vector2(18, 0)

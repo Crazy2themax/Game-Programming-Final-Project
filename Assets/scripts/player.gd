@@ -24,6 +24,7 @@ func _ready() -> void:
 	health.died.connect(_on_died)
 	_set_attack_hitbox_enabled(false)
 	_set_potion_visuals(false)
+	_connect_dragon_died()
 	
 
 func _physics_process(delta: float) -> void:
@@ -103,7 +104,8 @@ func change_state(new_state: State) -> void:
 	current_state = new_state
 	if new_state == State.JUMP:
 		velocity.y = JUMP_VELOCITY
-		jump_sfx.play()
+		if jump_sfx != null:
+			jump_sfx.play()
 	elif new_state == State.ATTACK:
 		attack_targets_hit.clear()
 		_set_attack_hitbox_enabled(true)
@@ -142,10 +144,7 @@ func get_health_component() -> PlayerHealth:
 func activate_dragon_slayer_potion() -> void:
 	dragon_slayer_active = true
 	_set_potion_visuals(true)
-	var dragon := get_tree().get_first_node_in_group("dragon_boss")
-	var dragon_died_callable := Callable(self, "_on_dragon_died")
-	if dragon != null and dragon.has_signal("dragon_died") and not dragon.is_connected("dragon_died", dragon_died_callable):
-		dragon.connect("dragon_died", dragon_died_callable)
+	_connect_dragon_died()
 
 func clear_dragon_slayer_potion() -> void:
 	dragon_slayer_active = false
@@ -197,3 +196,14 @@ func _on_dragon_died() -> void:
 		return
 	await tree.create_timer(0.8).timeout
 	tree.change_scene_to_file(VICTORY_MENU_PATH)
+
+func _connect_dragon_died() -> void:
+	var tree := get_tree()
+	if tree == null:
+		return
+	var dragon := tree.get_first_node_in_group("dragon_boss")
+	if dragon == null or not dragon.has_signal("dragon_died"):
+		return
+	var dragon_died_callable := Callable(self, "_on_dragon_died")
+	if not dragon.is_connected("dragon_died", dragon_died_callable):
+		dragon.connect("dragon_died", dragon_died_callable)

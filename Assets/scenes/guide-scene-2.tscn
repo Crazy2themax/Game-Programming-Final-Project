@@ -1,0 +1,149 @@
+[gd_scene format=3]
+
+[ext_resource type="Script" path="res://Assets/scenes/guide-scene-2.gd" id="1_script"]
+[ext_resource type="Texture2D" path="res://Assets/Background/game-introduction-02.png" id="2_bg"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_button"]
+bg_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_script")
+
+[node name="Background" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+expand_mode = 1
+texture = ExtResource("2_bg")
+
+[node name="Shade" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color(0, 0, 0, 0.35)
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 40.0
+offset_top = 40.0
+offset_right = -40.0
+offset_bottom = -40.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+alignment = 1
+theme_override_constants/separation = 14
+
+[node name="TitleLabel" type="Label" parent="MarginContainer/VBoxContainer"]
+theme_override_font_sizes/font_size = 60
+autowrap_mode = 3
+
+[node name="SubtitleLabel" type="Label" parent="MarginContainer/VBoxContainer"]
+theme_override_font_sizes/font_size = 33
+autowrap_mode = 3
+
+[node name="BodyLabel" type="Label" parent="MarginContainer/VBoxContainer"]
+theme_override_font_sizes/font_size = 20
+autowrap_mode = 3
+
+[node name="ListTitle" type="Label" parent="MarginContainer/VBoxContainer"]
+theme_override_font_sizes/font_size = 24
+autowrap_mode = 3
+
+[node name="ListContainer" type="VBoxContainer" parent="MarginContainer/VBoxContainer"]
+theme_override_constants/separation = 6
+
+[node name="ListItem1" type="Label" parent="MarginContainer/VBoxContainer/ListContainer"]
+theme_override_font_sizes/font_size = 20
+autowrap_mode = 3
+
+[node name="ListItem2" type="Label" parent="MarginContainer/VBoxContainer/ListContainer"]
+theme_override_font_sizes/font_size = 20
+autowrap_mode = 3
+
+[node name="ListItem3" type="Label" parent="MarginContainer/VBoxContainer/ListContainer"]
+theme_override_font_sizes/font_size = 20
+autowrap_mode = 3
+
+[node name="ListItem4" type="Label" parent="MarginContainer/VBoxContainer/ListContainer"]
+theme_override_font_sizes/font_size = 20
+autowrap_mode = 3
+
+[node name="ListItem5" type="Label" parent="MarginContainer/VBoxContainer/ListContainer"]
+theme_override_font_sizes/font_size = 20
+autowrap_mode = 3
+
+[node name="FooterLabel" type="Label" parent="MarginContainer/VBoxContainer"]
+theme_override_font_sizes/font_size = 20
+autowrap_mode = 3
+
+[node name="StartButtonContainer" type="CenterContainer" parent="MarginContainer/VBoxContainer"]
+
+[node name="StartGameButton" type="Button" parent="MarginContainer/VBoxContainer/StartButtonContainer"]
+custom_minimum_size = Vector2(320, 70)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
+theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
+theme_override_styles/normal = SubResource("StyleBoxFlat_button")
+theme_override_styles/hover = SubResource("StyleBoxFlat_button")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_button")
+theme_override_font_sizes/font_size = 26
+text = "Start Game"
+
+[node name="Spacer" type="Control" parent="MarginContainer/VBoxContainer"]
+size_flags_vertical = 3
+
+[node name="ButtonRow" type="HBoxContainer" parent="MarginContainer/VBoxContainer"]
+theme_override_constants/separation = 10
+
+[node name="MenuButton" type="Button" parent="MarginContainer/VBoxContainer/ButtonRow"]
+custom_minimum_size = Vector2(140, 44)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
+theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
+theme_override_styles/normal = SubResource("StyleBoxFlat_button")
+theme_override_styles/hover = SubResource("StyleBoxFlat_button")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_button")
+theme_override_font_sizes/font_size = 20
+text = "Menu"
+
+[node name="Spacer" type="Control" parent="MarginContainer/VBoxContainer/ButtonRow"]
+size_flags_horizontal = 3
+
+[node name="PrevButton" type="Button" parent="MarginContainer/VBoxContainer/ButtonRow"]
+custom_minimum_size = Vector2(160, 44)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
+theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
+theme_override_styles/normal = SubResource("StyleBoxFlat_button")
+theme_override_styles/hover = SubResource("StyleBoxFlat_button")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_button")
+theme_override_font_sizes/font_size = 20
+text = "Previous"
+
+[node name="NextButton" type="Button" parent="MarginContainer/VBoxContainer/ButtonRow"]
+custom_minimum_size = Vector2(140, 44)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
+theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
+theme_override_styles/normal = SubResource("StyleBoxFlat_button")
+theme_override_styles/hover = SubResource("StyleBoxFlat_button")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_button")
+theme_override_font_sizes/font_size = 20
+text = "Next"

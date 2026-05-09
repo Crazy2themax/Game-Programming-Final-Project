@@ -1,0 +1,83 @@
+[gd_scene format=3 uid="uid://o11y8e1lwl8e"]
+
+[ext_resource type="Script" uid="uid://bp4iqhppsq4he" path="res://Assets/scenes/in-middle-level-win.gd" id="1_script"]
+[ext_resource type="Texture2D" uid="uid://cnrc6pqiqtngf" path="res://Assets/Background/in-between-levels-win-scene.png" id="2_bg"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_button"]
+bg_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+
+[node name="Control" type="Control" unique_id=143951683]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_script")
+
+[node name="Background" type="TextureRect" parent="." unique_id=1762026132]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_bg")
+expand_mode = 1
+
+[node name="Shade" type="ColorRect" parent="." unique_id=851534638]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.35)
+
+[node name="CenterContainer" type="CenterContainer" parent="." unique_id=1819172113]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer" unique_id=182355419]
+layout_mode = 2
+theme_override_constants/separation = 18
+alignment = 1
+
+[node name="TitleLabel" type="Label" parent="CenterContainer/VBoxContainer" unique_id=1055963324]
+layout_mode = 2
+theme_override_font_sizes/font_size = 38
+horizontal_alignment = 1
+autowrap_mode = 3
+
+[node name="BodyLabel" type="Label" parent="CenterContainer/VBoxContainer" unique_id=1277494765]
+custom_minimum_size = Vector2(760, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 13
+horizontal_alignment = 1
+autowrap_mode = 3
+
+[node name="NextQuestLabel" type="Label" parent="CenterContainer/VBoxContainer" unique_id=659433435]
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+horizontal_alignment = 1
+autowrap_mode = 3
+
+[node name="StartButton" type="Button" parent="CenterContainer/VBoxContainer" unique_id=587087388]
+custom_minimum_size = Vector2(280, 64)
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 28
+theme_override_styles/normal = SubResource("StyleBoxFlat_button")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_button")
+theme_override_styles/hover = SubResource("StyleBoxFlat_button")
+text = "Start"

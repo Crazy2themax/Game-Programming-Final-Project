@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://d28ryfkf5lwbl"
-path="res://.godot/imported/game-introduction-04.png-ea72bb756d8c83889ca87efb5010e2ee.ctex"
+uid="uid://cnrc6pqiqtngf"
+path="res://.godot/imported/in-between-levels-win-scene.png-b12dd2329126b78b0a48c2e19a18ee7c.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Background/game-introduction-04.png"
-dest_files=["res://.godot/imported/game-introduction-04.png-ea72bb756d8c83889ca87efb5010e2ee.ctex"]
+source_file="res://Assets/Background/in-between-levels-win-scene.png"
+dest_files=["res://.godot/imported/in-between-levels-win-scene.png-b12dd2329126b78b0a48c2e19a18ee7c.ctex"]
 
 [params]
 

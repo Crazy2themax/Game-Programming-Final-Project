@@ -33,3 +33,34 @@ fail.highest_level,Highest Quest Reached,Quete la plus elevee atteinte
 victory.title,Victory!,Victoire!
 victory.message,The Dragon Has Been Defeated. You saved the princess and brought peace back to the kingdom.,Le dragon a ete vaincu. Vous avez sauve la princesse et rendu la paix au royaume.
 victory.exit,EXIT,SORTIR
+interwin.level1.title,Quest 1 Complete,Quete 1 terminee
+interwin.level1.body,"You have completed the first quest. The journey is still long!","Tu as termine la premiere quete. Le voyage est encore long!"
+interwin.level1.next,Quest 2: The Snowy Mountains,Quete 2: Les montagnes enneigees
+interwin.level2.title,Quest 2 Complete,Quete 2 terminee
+interwin.level2.body,"The final quest awaits at the Castle Ruins, where the evil dragon resides.","La quete finale t'attend au Chateau en ruines, ou vit le dragon malefique."
+interwin.level2.next,Final Quest: Castle Ruins,Quete finale: Chateau en ruines
+interwin.start,Start,Commencer
+guide.menu,Menu,Menu
+guide.next,Next,Suivant
+guide.previous,Previous,Precedent
+guide.start_game,Start Game,Commencer la quete
+guide1.title,The Last Knight's Quest,La derniere quete du dernier chevalier
+guide1.subtitle,The kingdom lies in shadow.,Le royaume est dans l'ombre.
+guide1.body,"The western lands have burned under the wrath of an evil dragon. Villages have fallen, the kingdom has been broken, and the princess has been taken far away to the Castle of Ruins. Only one knight remains brave enough to follow the dragon's path. His journey begins deep in the forest, where old camps, broken roads, and hidden dangers mark the first step of the quest. The knight must move forward, survive every trial, and gather what he needs to reach the castle. Each path brings him closer to the dragon, the princess, and the final battle that will decide the fate of the kingdom.","Les terres de l'ouest ont brule sous la colere d'un dragon malefique. Des villages sont tombes, le royaume est brise, et la princesse a ete emportee loin vers le Chateau en ruines. Un seul chevalier reste assez brave pour suivre la piste du dragon. Sa route commence au coeur de la foret, la ou de vieux campements, des routes brisees et des dangers caches marquent le premier pas de la quete. Le chevalier doit avancer, survivre a chaque epreuve et reunir ce dont il a besoin pour atteindre le chateau. Chaque chemin le rapproche du dragon, de la princesse et du combat final qui decidera du destin du royaume."
+guide1.list_title,The knight must:,Le chevalier doit:
+guide1.list.item1, - Follow the forest path and reach the northern pass., - Suivre le sentier de la foret et atteindre le col du nord.
+guide1.list.item2, - Keep his blade ready against enemies and dangers., - Garder sa lame prete face aux ennemis et aux dangers.
+guide1.list.item3, - Collect keys to unlock the way forward., - Ramasser les cles pour ouvrir le chemin.
+guide1.list.item4, - Gather hearts or life potions to restore his strength., - Ramasser des coeurs ou potions de vie pour retrouver sa force.
+guide1.list.item5, - Survive each quest to continue the journey., - Survivre a chaque quete pour poursuivre la route.
+guide1.footer,If the knight falls, he rises again from the quest he last reached.,Si le chevalier tombe il se releve a la quete qu'il a atteinte.
+guide2.title,The Path Ahead,La route a venir
+guide2.subtitle,The final battle waits beyond the mountains.,Le combat final attend au-dela des montagnes.
+guide2.body,"The quest is divided into three dangerous paths. First, the knight must survive the dark Forest. Then, he must cross the frozen Snowy Mountains, where the cold and danger grow stronger. At the end of the journey stands the Castle of Ruins, the dragon's lair. The castle is breaking apart from the dragon's power. Stones and bricks fall from above, fireballs tear through the halls, and every mistake can bring the knight closer to defeat. The knight's life can survive 4 hits. If his life reaches 0, the quest fails, but he can restart from the level he reached.","La quete est divisee en trois chemins dangereux. D'abord, le chevalier doit survivre a la Foret sombre. Ensuite, il doit traverser les Montagnes enneigees, ou le froid et le danger grandissent. Au bout de la route se dresse le Chateau en ruines, l'antre du dragon. Le chateau se brise sous la puissance du dragon. Des pierres et des briques tombent d'en haut, les boules de feu dechiquettent les couloirs, et chaque erreur rapproche le chevalier de la defaite. La vie du chevalier peut encaisser 4 coups. Si sa vie atteint 0, la quete echoue, mais il peut reprendre depuis le niveau atteint."
+guide2.list_title,Remember:,Souviens-toi:
+guide2.list.item1, - Avoid enemies traps fireballs falling rocks and falling bricks., - Evite les ennemis les pieges les boules de feu les pierres et les briques qui tombent.
+guide2.list.item2, - Collect hearts or life potions to restore your life., - Ramasse des coeurs ou potions de vie pour regagner ta vie.
+guide2.list.item3, - Find the keys needed to continue through the quest., - Trouve les cles necessaires pour continuer la quete.
+guide2.list.item4, - In the final level collect the magic potion before facing the dragon., - Dans le niveau final prends la potion magique avant d'affronter le dragon.
+guide2.list.item5, - The potion gives the knight the power to defeat the dragon in one final strike., - La potion donne au chevalier le pouvoir de vaincre le dragon d'un seul coup final.
+guide2.footer,The princess waits. The kingdom hopes. The last knight must not fail,La princesse attend. Le royaume espere. Le dernier chevalier ne doit pas echouer

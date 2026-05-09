@@ -21,4 +21,4 @@ func level_restart():
 
 func _on_area_2d_2_body_entered(body: Node2D) -> void:
 	if body.is_in_group("player"):
-		get_tree().change_scene_to_file("res://Assets/scenes/final-level.tscn")
+		get_tree().change_scene_to_file("res://Assets/scenes/in-middle-level-win.tscn")
