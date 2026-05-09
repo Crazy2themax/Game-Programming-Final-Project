@@ -34,6 +34,7 @@ var rng := RandomNumberGenerator.new()
 @onready var floating_tile_container: Node2D = get_node_or_null("FloatingTileContainer") as Node2D
 
 func _ready() -> void:
+	$Player.gravity = 400.0
 	rng.randomize()
 	if rock_container == null:
 		rock_container = self
