@@ -1,0 +1,69 @@
+[gd_scene format=3 uid="uid://bwlny1lhkfwwx"]
+
+[ext_resource type="Texture2D" uid="uid://dqtdou60bdsoi" path="res://Assets/level 2 ennemies sprite pack/snowball attack/spritesheet/snowball_spritesheet_3x2.png" id="1_gkbsf"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ehal4"]
+atlas = ExtResource("1_gkbsf")
+region = Rect2(0, 0, 512, 385)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yf44e"]
+atlas = ExtResource("1_gkbsf")
+region = Rect2(512, 0, 512, 385)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_t2n15"]
+atlas = ExtResource("1_gkbsf")
+region = Rect2(1024, 0, 512, 385)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rc13p"]
+atlas = ExtResource("1_gkbsf")
+region = Rect2(0, 385, 512, 385)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_d73kc"]
+atlas = ExtResource("1_gkbsf")
+region = Rect2(512, 385, 512, 385)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1nem6"]
+atlas = ExtResource("1_gkbsf")
+region = Rect2(1024, 385, 512, 385)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_b30t6"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ehal4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yf44e")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_t2n15")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rc13p")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_d73kc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1nem6")
+}],
+"loop": true,
+"name": &"snowball",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_1s4uu"]
+radius = 112.0
+
+[node name="snowball" type="Area2D" unique_id=1905006981]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=354868624]
+sprite_frames = SubResource("SpriteFrames_b30t6")
+animation = &"snowball"
+autoplay = "snowball"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1606668474]
+position = Vector2(-124, 11)
+shape = SubResource("CircleShape2D_1s4uu")
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="." unique_id=1792114449]

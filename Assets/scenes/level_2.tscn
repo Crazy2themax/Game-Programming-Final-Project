@@ -16,6 +16,10 @@
 [ext_resource type="AudioStream" uid="uid://1jfcsi6qglxp" path="res://Assets/sounds/background/level 2/dominic251-winter-468650.mp3" id="12_v3ism"]
 [ext_resource type="Texture2D" uid="uid://ddmf3k5tceo51" path="res://Assets/Background/spr_torch.png" id="15_v4v63"]
 [ext_resource type="Texture2D" uid="uid://b74quemo33miy" path="res://Assets/pickup-object/magic-key.png" id="16_gre0b"]
+[ext_resource type="Script" uid="uid://cpnfouknnd4ee" path="res://Assets/scripts/evil_reindeer.gd" id="17_qlncw"]
+[ext_resource type="Texture2D" uid="uid://c661xp44ips6k" path="res://Assets/level 2 ennemies sprite pack/2 Elkman/Elkman_attack.png" id="18_ghqjf"]
+[ext_resource type="Texture2D" uid="uid://b4falq7g54hok" path="res://Assets/level 2 ennemies sprite pack/2 Elkman/Elkman_death.png" id="19_elstv"]
+[ext_resource type="Texture2D" uid="uid://bd2tl27xhu8o7" path="res://Assets/level 2 ennemies sprite pack/2 Elkman/Elkman_idle.png" id="20_7g47h"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_iuiu5"]
 
@@ -2531,6 +2535,127 @@ height = 34.0
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_v4v63"]
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_e07qx"]
+atlas = ExtResource("18_ghqjf")
+region = Rect2(0, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nhjuj"]
+atlas = ExtResource("18_ghqjf")
+region = Rect2(48, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qqrhf"]
+atlas = ExtResource("18_ghqjf")
+region = Rect2(96, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_suj6b"]
+atlas = ExtResource("18_ghqjf")
+region = Rect2(144, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_v2gvx"]
+atlas = ExtResource("18_ghqjf")
+region = Rect2(192, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rcx68"]
+atlas = ExtResource("18_ghqjf")
+region = Rect2(240, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rd7k4"]
+atlas = ExtResource("19_elstv")
+region = Rect2(0, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_btm1m"]
+atlas = ExtResource("19_elstv")
+region = Rect2(48, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gkiad"]
+atlas = ExtResource("19_elstv")
+region = Rect2(96, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_g63ww"]
+atlas = ExtResource("19_elstv")
+region = Rect2(144, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fm8bq"]
+atlas = ExtResource("20_7g47h")
+region = Rect2(0, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_p3ww8"]
+atlas = ExtResource("20_7g47h")
+region = Rect2(48, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_87f5e"]
+atlas = ExtResource("20_7g47h")
+region = Rect2(96, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_oggiu"]
+atlas = ExtResource("20_7g47h")
+region = Rect2(144, 0, 48, 48)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_l5ryu"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_e07qx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nhjuj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qqrhf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_suj6b")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_v2gvx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rcx68")
+}],
+"loop": true,
+"name": &"attack",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rd7k4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_btm1m")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gkiad")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_g63ww")
+}],
+"loop": true,
+"name": &"death",
+"speed": 6.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fm8bq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_p3ww8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_87f5e")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_oggiu")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_wxk20"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_e6nhq"]
+size = Vector2(652.5, 113.5)
+
 [node name="level 2" type="Node2D" unique_id=1035286738]
 script = ExtResource("1_y6uo0")
 
@@ -2657,7 +2782,7 @@ position = Vector2(24, 28)
 shape = SubResource("CapsuleShape2D_v4v63")
 
 [node name="Player" parent="." unique_id=1946971537 instance=ExtResource("8_v4v63")]
-position = Vector2(20, 585)
+position = Vector2(1360, 147)
 
 [node name="Camera2D" type="Camera2D" parent="Player" unique_id=232139536]
 position = Vector2(0, -6)
@@ -2682,6 +2807,31 @@ shape = SubResource("CircleShape2D_v4v63")
 [node name="Sprite2D" type="Sprite2D" parent="KeyForNextLevel" unique_id=152744351]
 texture = ExtResource("16_gre0b")
 
+[node name="EvilReindeer" type="CharacterBody2D" parent="." unique_id=2104995038]
+position = Vector2(2076, 194)
+script = ExtResource("17_qlncw")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="EvilReindeer" unique_id=1218095851]
+texture_filter = 1
+position = Vector2(-7, 3)
+sprite_frames = SubResource("SpriteFrames_l5ryu")
+animation = &"idle"
+autoplay = "idle"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="EvilReindeer" unique_id=215560511]
+position = Vector2(4, 12)
+shape = SubResource("CapsuleShape2D_wxk20")
+
+[node name="AreaOfAttack" type="Area2D" parent="EvilReindeer" unique_id=1027794605]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="EvilReindeer/AreaOfAttack" unique_id=142825067]
+position = Vector2(-342.75, -32.25)
+shape = SubResource("RectangleShape2D_e6nhq")
+
+[node name="ThrowTimer" type="Timer" parent="EvilReindeer" unique_id=53747649]
+
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
 [connection signal="body_entered" from="DoorToNextLevel" to="." method="_on_door_to_next_level_body_entered"]
 [connection signal="body_entered" from="KeyForNextLevel" to="." method="_on_key_for_next_level_body_entered"]
+[connection signal="body_entered" from="EvilReindeer/AreaOfAttack" to="EvilReindeer" method="_on_area_of_attack_body_entered"]
+[connection signal="body_exited" from="EvilReindeer/AreaOfAttack" to="EvilReindeer" method="_on_area_of_attack_body_exited"]
