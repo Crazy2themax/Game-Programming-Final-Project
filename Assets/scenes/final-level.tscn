@@ -6,9 +6,9 @@
 [ext_resource type="PackedScene" path="res://Assets/scenes/UI-interface.tscn" id="4_ui"]
 [ext_resource type="PackedScene" path="res://Assets/scenes/heart_pickup.tscn" id="5_heart"]
 [ext_resource type="PackedScene" uid="uid://c8tnpmkk12ma1" path="res://Assets/scenes/final-scene-dragon.tscn" id="6_dragon"]
-[ext_resource type="PackedScene" path="res://Assets/scenes/magic_potion_pickup.tscn" id="7_magic_potion"]
 [ext_resource type="AudioStream" uid="uid://cgow2ef678h1i" path="res://Assets/sounds/background/final-level/background-loop-music-for-final-level-only.mp3" id="6_final_music"]
-[ext_resource type="Script" path="res://Assets/scripts/final_level.gd" id="8_final_level_script"]
+[ext_resource type="PackedScene" path="res://Assets/scenes/magic_potion_pickup.tscn" id="7_magic_potion"]
+[ext_resource type="Script" uid="uid://eas3u2py8nji" path="res://Assets/scripts/final_level.gd" id="8_final_level_script"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_floor"]
 size = Vector2(10000, 21.5)
@@ -77,7 +77,6 @@ scale = Vector2(3, 3)
 
 [node name="UI-interface" parent="." unique_id=628786847 instance=ExtResource("4_ui")]
 level_number = 3
-countdown_seconds = 180
 
 [node name="FinalLevelMusic" type="AudioStreamPlayer" parent="." unique_id=940150803]
 stream = ExtResource("6_final_music")

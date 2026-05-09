@@ -2825,7 +2825,7 @@ shape = SubResource("CapsuleShape2D_wxk20")
 [node name="AreaOfAttack" type="Area2D" parent="EvilReindeer" unique_id=1027794605]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="EvilReindeer/AreaOfAttack" unique_id=142825067]
-position = Vector2(-342.75, -32.25)
+position = Vector2(-345, -32)
 shape = SubResource("RectangleShape2D_e6nhq")
 
 [node name="ThrowTimer" type="Timer" parent="EvilReindeer" unique_id=53747649]
