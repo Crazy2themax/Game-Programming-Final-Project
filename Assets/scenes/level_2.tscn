@@ -2657,7 +2657,7 @@ position = Vector2(24, 28)
 shape = SubResource("CapsuleShape2D_v4v63")
 
 [node name="Player" parent="." unique_id=1946971537 instance=ExtResource("8_v4v63")]
-position = Vector2(1373, 406)
+position = Vector2(20, 585)
 
 [node name="Camera2D" type="Camera2D" parent="Player" unique_id=232139536]
 position = Vector2(0, -6)
