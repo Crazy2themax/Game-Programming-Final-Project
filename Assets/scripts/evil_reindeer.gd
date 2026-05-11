@@ -8,6 +8,7 @@ var dead := false
 @onready var throw_timer: Timer = $ThrowTimer
 @onready var anim: AnimatedSprite2D = $AnimatedSprite2D
 @onready var detection: Area2D = $AreaOfAttack
+@onready var throw_sfx: AudioStreamPlayer2D = $SnowballThrowSound
 
 func _ready() -> void:
 	detection.body_entered.connect(_on_area_of_attack_body_entered)
@@ -29,6 +30,7 @@ func apply_enemy_hit(amount: int = 1, cause: String = "") -> void:
 func _throw_snowball() -> void:
 	if dead:
 		return
+	throw_sfx.play()
 	anim.play("attack")  # plays animation at same time as throwing
 	var ball = SNOWBALL.instantiate()
 	get_parent().add_child(ball)
@@ -44,10 +46,9 @@ func _on_area_of_attack_body_entered(body: Node2D) -> void:
 	if body.is_in_group("player") and not dead:
 		player_in_range = true
 		throw_timer.stop() 
-		print("body entered, throwing first snowball")
 		_throw_snowball()
 		throw_timer.start(1.5)
-		print("timer started")
+		
 		
 
 func _on_area_of_attack_body_exited(body: Node2D) -> void:

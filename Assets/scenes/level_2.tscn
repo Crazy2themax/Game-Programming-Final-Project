@@ -18,6 +18,7 @@
 [ext_resource type="Texture2D" uid="uid://b74quemo33miy" path="res://Assets/pickup-object/magic-key.png" id="16_gre0b"]
 [ext_resource type="Script" uid="uid://cpnfouknnd4ee" path="res://Assets/scripts/evil_reindeer.gd" id="17_qlncw"]
 [ext_resource type="Texture2D" uid="uid://c661xp44ips6k" path="res://Assets/level 2 ennemies sprite pack/2 Elkman/Elkman_attack.png" id="18_ghqjf"]
+[ext_resource type="AudioStream" uid="uid://bgbd0smoj4781" path="res://Assets/sounds/sound effects/lvl 2/dragon-studio-simple-whoosh-382724.mp3" id="19_7g47h"]
 [ext_resource type="Texture2D" uid="uid://b4falq7g54hok" path="res://Assets/level 2 ennemies sprite pack/2 Elkman/Elkman_death.png" id="19_elstv"]
 [ext_resource type="Texture2D" uid="uid://cce7ug00u50d" path="res://Assets/Background/lvl 2 background/portal/sprite-sheet.png" id="19_ghqjf"]
 [ext_resource type="Texture2D" uid="uid://bd2tl27xhu8o7" path="res://Assets/level 2 ennemies sprite pack/2 Elkman/Elkman_idle.png" id="20_7g47h"]
@@ -2881,6 +2882,11 @@ shape = SubResource("RectangleShape2D_e6nhq")
 
 [node name="ThrowTimer" type="Timer" parent="EvilReindeer" unique_id=53747649]
 
+[node name="SnowballThrowSound" type="AudioStreamPlayer2D" parent="EvilReindeer" unique_id=1595081651]
+stream = ExtResource("19_7g47h")
+volume_db = -11.893
+bus = &"Sound effect"
+
 [node name="snowballBorder" type="StaticBody2D" parent="." unique_id=1339286290]
 position = Vector2(1358, 205)
 
@@ -2920,7 +2926,7 @@ collision_layer = 4
 physics_material_override = SubResource("PhysicsMaterial_ghqjf")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Borders/LeftBorder" unique_id=19814989]
-position = Vector2(4.371139e-08, 1)
+position = Vector2(-1.9999999, 3)
 shape = SubResource("SegmentShape2D_ghqjf")
 
 [node name="rightBorder" type="StaticBody2D" parent="Borders" unique_id=1834293587]
