@@ -53,7 +53,7 @@ position = Vector2(900, 47.25)
 shape = SubResource("RectangleShape2D_dragon_floor")
 
 [node name="Player" parent="." unique_id=202204149 instance=ExtResource("3_player")]
-scale = Vector2(4, 4)
+scale = Vector2(2.6, 2.6)
 
 [node name="Camera2D" type="Camera2D" parent="Player" unique_id=552311914]
 position = Vector2(0, -6)
@@ -63,22 +63,27 @@ limit_bottom = 648
 
 [node name="HeartPickup" parent="." unique_id=144597706 instance=ExtResource("5_heart")]
 position = Vector2(380, 480)
+scale = Vector2(0.65, 0.65)
 
 [node name="MagicPotionPickup" parent="." unique_id=144597707 instance=ExtResource("7_magic_potion")]
 position = Vector2(500, 480)
+scale = Vector2(0.65, 0.65)
 
 [node name="Dragon" parent="." unique_id=2118275422 instance=ExtResource("6_dragon")]
 position = Vector2(1400, 518)
-scale = Vector2(3, 3)
+scale = Vector2(1.95, 1.95)
 
 [node name="RockContainer" type="Node2D" parent="." unique_id=2118275423]
+scale = Vector2(0.65, 0.65)
 
 [node name="FloatingTileContainer" type="Node2D" parent="." unique_id=2118275424]
+scale = Vector2(0.65, 0.65)
 
 [node name="UI-interface" parent="." unique_id=628786847 instance=ExtResource("4_ui")]
 level_number = 3
 
 [node name="FinalLevelMusic" type="AudioStreamPlayer" parent="." unique_id=940150803]
 stream = ExtResource("6_final_music")
+volume_db = -8.6
 autoplay = true
 bus = &"background"

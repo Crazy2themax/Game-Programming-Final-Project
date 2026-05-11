@@ -3,7 +3,9 @@ extends CharacterBody2D
 const SPEED = 150.0
 @export var gravity: float = 400.0
 const JUMP_VELOCITY = -300.0
+const MID_LEVEL_WIN_PATH = "res://Assets/scenes/in-middle-level-win.tscn"
 const VICTORY_MENU_PATH = "res://Assets/scenes/VictoryMenu.tscn"
+const CHEAT_CODE = "SKIP"
 
 enum State { IDLE, RUN, ATTACK, JUMP, HURT, DEAD }
 
@@ -13,6 +15,8 @@ var has_key: bool = false
 var current_state: State = State.IDLE
 var dragon_slayer_active := false
 var attack_targets_hit: Array[Node2D] = []
+var cheat_buffer := ""
+var cheat_triggered := false
 @onready var jump_sfx: AudioStreamPlayer2D = $jump
 @onready var anim: AnimatedSprite2D = $AnimatedSprite2D
 @onready var attack_sfx: AudioStreamPlayer2D = $AttackSfx
@@ -42,6 +46,20 @@ func _physics_process(delta: float) -> void:
 		State.HURT:   handle_hurt()
 		State.DEAD:   handle_dead()
 	move_and_slide()
+
+func _unhandled_input(event: InputEvent) -> void:
+	if cheat_triggered or current_state == State.DEAD:
+		return
+	var key_event := event as InputEventKey
+	if key_event == null or not key_event.pressed or key_event.echo:
+		return
+	if key_event.unicode == 0:
+		return
+	cheat_buffer += char(key_event.unicode)
+	if cheat_buffer.length() > CHEAT_CODE.length():
+		cheat_buffer = cheat_buffer.substr(cheat_buffer.length() - CHEAT_CODE.length(), CHEAT_CODE.length())
+	if cheat_buffer.to_upper() == CHEAT_CODE:
+		_trigger_skip_cheat()
 
 func handle_idle() -> void:
 	velocity.x = 0
@@ -199,6 +217,15 @@ func _on_dragon_died() -> void:
 		return
 	await tree.create_timer(0.8).timeout
 	tree.change_scene_to_file(VICTORY_MENU_PATH)
+
+func _trigger_skip_cheat() -> void:
+	cheat_triggered = true
+	var target_scene := MID_LEVEL_WIN_PATH
+	if GameSession != null:
+		var current_level_value = GameSession.get("current_level")
+		if typeof(current_level_value) == TYPE_INT and current_level_value >= 3:
+			target_scene = VICTORY_MENU_PATH
+	get_tree().change_scene_to_file(target_scene)
 
 func _connect_dragon_died() -> void:
 	var tree := get_tree()

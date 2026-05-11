@@ -26,8 +26,11 @@ const FLOATING_TILE_SCENE := preload("res://Assets/scenes/floating_tile.tscn")
 @export_range(0.0, 1.0, 0.01) var floating_quarter_helper_chance := 0.65
 @export var floating_min_gap_x := 95.0
 @export var floating_min_gap_y := 18.0
+@export var victory_scene_path := "res://Assets/scenes/VictoryMenu.tscn"
+@export_range(0.0, 3.0, 0.05) var victory_delay := 0.6
 
 var rng := RandomNumberGenerator.new()
+var victory_triggered := false
 
 @onready var dragon: Node2D = get_node_or_null("Dragon") as Node2D
 @onready var rock_container: Node2D = get_node_or_null("RockContainer") as Node2D
@@ -42,6 +45,10 @@ func _ready() -> void:
 		floating_tile_container = self
 	if dragon == null:
 		dragon = get_tree().get_first_node_in_group("dragon_boss") as Node2D
+	if dragon != null and dragon.has_signal("dragon_died"):
+		var died_callable := Callable(self, "_on_dragon_died")
+		if not dragon.is_connected("dragon_died", died_callable):
+			dragon.connect("dragon_died", died_callable)
 	_spawn_floating_tiles()
 	if dragon == null or not dragon.has_signal("fireball_launched"):
 		push_warning("Final level rock spawner could not find dragon fireball signal.")
@@ -54,6 +61,17 @@ func _ready() -> void:
 func _on_dragon_fireball_launched() -> void:
 	for _i in range(rocks_per_fire):
 		_spawn_falling_rock()
+
+func _on_dragon_died() -> void:
+	if victory_triggered:
+		return
+	victory_triggered = true
+	if victory_scene_path.is_empty():
+		push_warning("Victory scene path is empty; cannot switch scenes.")
+		return
+	if victory_delay > 0.0:
+		await get_tree().create_timer(victory_delay).timeout
+	get_tree().change_scene_to_file(victory_scene_path)
 
 func _spawn_falling_rock() -> void:
 	var dragon_x := 1400.0

@@ -200,7 +200,7 @@ script = ExtResource("2_fireball_script")
 
 [node name="FireballAnimatedSprite" type="AnimatedSprite2D" parent="DragonAnimatedSprite/FireballLaunchPoint/Fireball" unique_id=52971147]
 position = Vector2(-46.72132, -36)
-scale = Vector2(0.34000003, 0.36333334)
+scale = Vector2(0.22100002, 0.23616667)
 sprite_frames = SubResource("SF_fireball")
 animation = &"fireball"
 autoplay = "fireball"
