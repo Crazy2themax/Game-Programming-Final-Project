@@ -346,6 +346,7 @@ animations = [{
 size = Vector2(20, 18)
 
 [node name="Player" type="CharacterBody2D" unique_id=1946971537]
+collision_mask = 5
 script = ExtResource("1_jyxux")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=421146384]

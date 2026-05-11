@@ -2706,7 +2706,7 @@ animations = [{
 }]
 
 [sub_resource type="Gradient" id="Gradient_ghqjf"]
-offsets = PackedFloat32Array(0, 0.10687023, 0.9961832, 1)
+offsets = PackedFloat32Array(0, 0.259542, 0.9961832, 1)
 colors = PackedColorArray(1, 1, 1, 1, 0.97616875, 0.97616875, 0.97616875, 1, 0.111435235, 0.111435235, 0.111435235, 1, 0, 0, 0, 1)
 
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_elstv"]
@@ -2714,6 +2714,14 @@ gradient = SubResource("Gradient_ghqjf")
 fill = 1
 fill_from = Vector2(0.44444445, 0.5811966)
 fill_to = Vector2(0.123931624, 0.17521368)
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_ghqjf"]
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_ghqjf"]
+a = Vector2(-520, -10.999977)
+b = Vector2(114, -11.000005)
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_elstv"]
 
 [node name="level 2" type="Node2D" unique_id=1035286738]
 script = ExtResource("1_y6uo0")
@@ -2780,17 +2788,17 @@ scale = Vector2(3, 2.9999998)
 texture = ExtResource("6_p7f2n")
 metadata/_edit_lock_ = true
 
-[node name="TileMap" type="TileMapLayer" parent="." unique_id=307765502]
+[node name="backTileMap" type="TileMapLayer" parent="." unique_id=307765502]
 texture_filter = 1
 position = Vector2(0, 525)
 tile_map_data = PackedByteArray("AAABAAUAAQANACIAAAACAAUAAQAOACIAAAADAAUAAQAEAB4AAAAEAAUAAQAFAB4AAAAVAP7/AQACAB4AAAAWAP7/AQADAB4AAAAXAP7/AQAEAB4AAAAYAP7/AQAFAB4AAAAJAPz/AQAMAB4AAAAKAPz/AQANAB4AAAACAPj/AQAMAB4AAAADAPj/AQANAB4AAAAJAAQAAQAMAB4AAAAKAAQAAQANAB4AAAAQAAEAAQAMAB4AAAARAAEAAQANAB4AAAAAAPT/AQAMAB4AAAABAPT/AQANAB4AAAAFAPD/AQAMAB4AAAAGAPD/AQANAB4AAAAdAO//AQAMAB4AAAAeAO//AQANAB4AAAAtAO7/AQAMAB4AAAAuAO7/AQANAB4AAAAyAOr/AQAMAB4AAAAzAOr/AQANAB4AAABEAAIAAQAMAB4AAABFAAIAAQANAB4AAABRAP3/AQAMAB4AAABSAP3/AQANAB4AAABRAPH/AQAMACEAAABSAPH/AQANACEAAABMAAEAAQAMAB4AAABNAAEAAQANAB4AAABWAPr/AQAMAB4AAABXAPr/AQANAB4AAABWAPT/AQAMAB4AAABXAPT/AQANAB4AAABaAO3/AQAMAB4AAABbAO3/AQANAB4AAABkAO3/AQAMAB4AAABlAO3/AQANAB4AAABvAO3/AQAMAB4AAABwAO3/AQANAB4AAAB5AO3/AQAMAB4AAAB6AO3/AQANAB4AAAAQAPr/AQAOACIAAAARAPr/AQANAB4AAAAQAPD/AQAMAB4AAAARAPD/AQANAB4AAAAYAPH/AQAMAB4AAAAZAPH/AQANAB4AAAAhAOz/AQAMAB4AAAAiAOz/AQANAB4AAACAAO3/AQAOACIAAACBAO3/AQANACIAAACCAO3/AQAOACIAAACDAO3/AQAPACIAAACEAO3/AQAQACIAAACFAO3/AQAPACIAAABeAPr/AQAMAB4AAABfAPr/AQANAB4AAABtAPj/AQAMAB4AAABuAPj/AQANAB4AAAByAPr/AQAMAB4AAABzAPr/AQANAB4AAAB6APr/AQAMAB4AAAB7APr/AQANAB4AAABpAPb/AQAMAB4AAABpAPf/AQAMAB8AAABpAPj/AQAMACAAAABpAPn/AQAMACEAAABqAPb/AQANAB4AAABqAPf/AQANAB8AAABqAPj/AQANACAAAABqAPn/AQANACEAAABtAPn/AQAMACEAAABuAPn/AQANACEAAAByAPv/AQAMACEAAABzAPv/AQANACEAAABeAPv/AQAMACEAAABfAPv/AQANACEAAABWAPv/AQAMACEAAABXAPv/AQANACEAAABRAP7/AQAMACEAAABSAP7/AQANACEAAABMAAIAAQAMACEAAABNAAIAAQANACEAAABRAPf/AQAMACEAAABSAPf/AQANACEAAABRAPb/AQAMAB4AAABSAPb/AQANAB4AAABWAPX/AQAMACEAAABXAPX/AQANACEAAABkAO7/AQAMACEAAABlAO7/AQANACEAAABvAO7/AQAMACEAAABwAO7/AQANACEAAAB5AO7/AQAMACEAAAB6AO7/AQANACEAAABEAAMAAQAMACEAAABFAAMAAQANACEAAAAtAO//AQAMACEAAAAuAO//AQANACEAAAAyAOv/AQAMACEAAAAzAOv/AQANACEAAAAhAO3/AQAMACEAAAAiAO3/AQANACEAAAAdAPD/AQAMACEAAAAeAPD/AQANACEAAAAYAPL/AQAMACEAAAAZAPL/AQANACEAAAAQAPH/AQAMACEAAAARAPH/AQANACEAAAAFAPH/AQAMACEAAAAGAPH/AQANACEAAAAAAPX/AQAMACEAAAABAPX/AQANACEAAAACAPn/AQAMACEAAAADAPn/AQANACEAAAAQAPv/AQAQACMAAAARAPv/AQANACEAAAAJAP3/AQAMACEAAAAKAP3/AQANACEAAAAQAAIAAQAMACEAAAARAAIAAQANACEAAAAJAAUAAQAMACEAAAAKAAUAAQANACEAAACAAO7/AQAOACMAAACBAO7/AQAKABkAAACCAO7/AQACABoAAACDAO7/AQADABoAAACEAO7/AQACABoAAACFAO7/AQADABoAAAABAAYAAQANACMAAAACAAYAAQADACMAAAADAAYAAQAEACMAAAAEAAYAAQAFACMAAAAVAP//AQACACMAAAAWAP//AQADACMAAAAXAP//AQAEACMAAAAYAP//AQAFACMAAAB6APv/AQAMACEAAAB7APv/AQANACEAAABRAPD/AQAMAB4AAABSAPD/AQANAB4AAACGAO3/AQAQACIAAACGAO7/AQACABoAAACHAO3/AQAPACIAAACHAO7/AQADABoAAACIAO3/AQAPACIAAACJAO3/AQAPACIAAACJAO7/AQAHABkAAACBAO//AQAAACEAAACCAO//AQABACEAAACDAO//AQACACEAAACDAPD/AQACACIAAACDAPH/AQACACMAAACEAO//AQADACEAAACEAPD/AQADACIAAACEAPH/AQADACMAAACFAO//AQAEACEAAACFAPD/AQAEABUAAACFAPH/AQACABUAAACGAO//AQAEABUAAACGAPD/AQAFABUAAACGAPH/AQAFABYAAACHAO//AQAFABUAAACIAO//AQAIAB0AAACFAPL/AQACABcAAACGAPL/AQAFABcAAACHAPD/AQAFABcAAAB+AO3/AQAMACIAAAB+AO7/AQAMACMAAAB/AO3/AQANACIAAAB/AO7/AQANACMAAACKAO3/AQAQACIAAACKAO7/AQAQACMAAACLAO3/AQARACIAAACLAO7/AQARACMAAACJAO//AQALAB0AAACIAO7/AQAEABoAAACAAOv/AgAPAB4AAACAAOz/AgAPAB8AAACJAOv/AgANAB4AAACJAOz/AgANAB8AAACAAOr/AgAPAB4AAACAAOn/AgAPAB4AAACAAOj/AgAPAB4AAACAAOf/AgAPAB4AAACAAOb/AgAPAB0AAACJAOr/AgANAB4AAACJAOn/AgANAB4AAACJAOj/AgANAB4AAACJAOf/AgANAB4AAACJAOb/AgANAB0AAACBAOz/AgALAB8AAACCAOz/AgALAB8AAACDAOz/AgALAB8AAACIAOz/AgALAB8AAACHAOz/AgALAB8AAACGAOz/AgALAB8AAACFAOz/AgALAB8AAACEAOz/AgALAB8AAACBAOv/AgAKAB4AAACCAOv/AgALAB4AAACDAOv/AgALAB4AAACEAOv/AgALAB4AAACFAOv/AgALAB4AAACGAOv/AgALAB4AAACHAOv/AgALAB4AAACIAOv/AgALAB4AAACIAOr/AgAKAB4AAACHAOr/AgAKAB4AAACGAOr/AgAKAB4AAACFAOr/AgAKAB4AAACEAOr/AgAKAB4AAACDAOr/AgAKAB4AAACCAOr/AgAKAB4AAACBAOr/AgAKAB0AAACCAOb/AgANAB0AAACHAOb/AgAPAB0AAACHAOf/AgAPAB4AAACHAOj/AgAPAB4AAACHAOn/AgAKAB0AAACBAOb/AgAKAB0AAACBAOf/AgAKAB4AAACBAOn/AgAKAB4AAACIAOb/AgAMAB4AAACIAOf/AgAMAB4AAACIAOj/AgAMAB4AAACIAOn/AgAKAB0AAACCAOn/AgAKAB0AAACCAOj/AgANAB4AAACCAOf/AgANAB4AAACDAOn/AgAKAB0AAACEAOn/AgAKAB0AAACFAOn/AgAKAB0AAACGAOn/AgAKAB0AAACBAOj/AgAKAB0AAAAPAPr/AQANACIAAAAPAPv/AQAPACMAAAAOAPv/AQAMACEAAAAOAPr/AQAMACIAAAAAAAUAAQAMACIAAAAAAAYAAQAMACMAAABaAO7/AQAMACEAAABbAO7/AQANACEAAABUAOr/AQAMAB4AAABVAOr/AQANAB4AAABUAOv/AQAMACAAAABVAOv/AQANACAAAABOAOz/AQAMAB4AAABPAOz/AQANAB4AAABOAO3/AQAMACEAAABPAO3/AQANACEAAABUAOz/AQAMACEAAABVAOz/AQANACEAAAA=")
 tile_set = SubResource("TileSet_lwule")
 
-[node name="TileMapLayer" type="TileMapLayer" parent="TileMap" unique_id=1191165179]
+[node name="frontTileMap" type="TileMapLayer" parent="backTileMap" unique_id=1191165179]
 tile_map_data = PackedByteArray("AACEAOr/AAAAABwAAACEAOv/AAAAAB0AAACEAOz/AAAAAB4AAACFAOr/AAABABwAAACFAOv/AAABAB0AAACFAOz/AAABAB4AAACIAOz/AAAMAAkAAACJAOn/AAANAAYAAACJAOr/AAANAAcAAACJAOz/AAANAAkAAACKAOn/AAAOAAYAAACKAOr/AAAOAAcAAACKAOv/AAAOAAgAAACKAOz/AAAOAAkAAACLAOn/AAAPAAYAAACLAOr/AAAPAAcAAACLAOv/AAAPAAgAAACLAOz/AAAPAAkAAACMAOn/AAAQAAYAAACMAOr/AAAQAAcAAACKAOj/AAAOAAUAAACLAOj/AAAPAAUAAAA=")
 tile_set = SubResource("TileSet_gre0b")
 
-[node name="CPUParticles2D" type="CPUParticles2D" parent="." unique_id=1129127467]
+[node name="snowParticles" type="CPUParticles2D" parent="." unique_id=1129127467]
 position = Vector2(612, -1)
 amount = 400
 lifetime = 1.4
@@ -2806,10 +2814,11 @@ angular_velocity_min = -578.76
 angular_velocity_max = 227.37
 scale_amount_max = 5.0
 
-[node name="Area2D" type="Area2D" parent="." unique_id=1359455376]
-position = Vector2(-1, 651)
+[node name="AbyssBorder" type="Area2D" parent="." unique_id=1359455376]
+position = Vector2(0, 649)
+collision_layer = 4
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1002811044]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AbyssBorder" unique_id=1002811044]
 shape = SubResource("WorldBoundaryShape2D_y6uo0")
 
 [node name="HeartPickup" parent="." unique_id=877473342 instance=ExtResource("10_heart")]
@@ -2818,7 +2827,7 @@ position = Vector2(895, 161)
 [node name="UI-interface" parent="." unique_id=1189407823 instance=ExtResource("9_ui")]
 level_number = 2
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=471448569]
+[node name="rightTorch" type="AnimatedSprite2D" parent="." unique_id=471448569]
 texture_filter = 1
 position = Vector2(2105, 193)
 sprite_frames = SubResource("SpriteFrames_e07qx")
@@ -2826,7 +2835,7 @@ animation = &"torch"
 autoplay = "torch"
 frame_progress = 0.71788704
 
-[node name="AnimatedSprite2D2" type="AnimatedSprite2D" parent="." unique_id=1937805932]
+[node name="leftTorch" type="AnimatedSprite2D" parent="." unique_id=1937805932]
 texture_filter = 1
 position = Vector2(2152, 193)
 sprite_frames = SubResource("SpriteFrames_nhjuj")
@@ -2880,27 +2889,53 @@ position = Vector2(10.5, -6.5)
 shape = SubResource("RectangleShape2D_qlncw")
 
 [node name="Portal Sprite" type="AnimatedSprite2D" parent="." unique_id=300698117]
+texture_filter = 1
 position = Vector2(25, 578)
 sprite_frames = SubResource("SpriteFrames_a5tg1")
 autoplay = "default"
 
-[node name="PointLight2D" type="PointLight2D" parent="." unique_id=483812966]
+[node name="leftTorchLight" type="PointLight2D" parent="." unique_id=483812966]
 position = Vector2(2152, 190)
 color = Color(0.7764706, 0.7176471, 0, 1)
 texture = SubResource("GradientTexture2D_elstv")
 
-[node name="PointLight2D2" type="PointLight2D" parent="." unique_id=1408745082]
+[node name="rightTorchLight" type="PointLight2D" parent="." unique_id=1408745082]
 position = Vector2(2104, 190)
 color = Color(0.7764706, 0.7176471, 0, 1)
 texture = SubResource("GradientTexture2D_elstv")
 
-[node name="PointLight2D3" type="PointLight2D" parent="." unique_id=1034184198]
-position = Vector2(25, 578)
-color = Color(0.77562517, 0.12616113, 1.0039216, 1)
+[node name="PortalLight" type="PointLight2D" parent="." unique_id=1034184198]
+position = Vector2(23.000004, 576)
+scale = Vector2(1.703125, 1.453125)
+color = Color(0.46168026, 0.0027307929, 0.8382068, 1)
 texture = SubResource("GradientTexture2D_elstv")
 
+[node name="Borders" type="Node2D" parent="." unique_id=1081656716]
+position = Vector2(-1, 651)
+
+[node name="LeftBorder" type="StaticBody2D" parent="Borders" unique_id=666670113]
+position = Vector2(-9, -131)
+rotation = 1.5707964
+collision_layer = 4
+physics_material_override = SubResource("PhysicsMaterial_ghqjf")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Borders/LeftBorder" unique_id=19814989]
+position = Vector2(4.371139e-08, 1)
+shape = SubResource("SegmentShape2D_ghqjf")
+
+[node name="rightBorder" type="StaticBody2D" parent="Borders" unique_id=1834293587]
+position = Vector2(2301, -251)
+rotation = 1.5707964
+collision_layer = 4
+physics_material_override = SubResource("PhysicsMaterial_elstv")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Borders/rightBorder" unique_id=475080146]
+position = Vector2(-125.00003, -541)
+rotation = -1.5707964
+shape = SubResource("SegmentShape2D_ghqjf")
+
 [node name="Player" parent="." unique_id=1946971537 instance=ExtResource("8_v4v63")]
-position = Vector2(50, 588)
+position = Vector2(53, 561)
 
 [node name="Camera2D" type="Camera2D" parent="Player" unique_id=232139536]
 position = Vector2(0, -6)
@@ -2916,7 +2951,7 @@ autoplay = true
 max_distance = 4096.0
 bus = &"background"
 
-[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_entered" from="AbyssBorder" to="." method="_on_abyss_border_body_entered"]
 [connection signal="body_entered" from="DoorToNextLevel" to="." method="_on_door_to_next_level_body_entered"]
 [connection signal="body_entered" from="KeyForNextLevel" to="." method="_on_key_for_next_level_body_entered"]
 [connection signal="body_entered" from="EvilReindeer/AreaOfAttack" to="EvilReindeer" method="_on_area_of_attack_body_entered"]
