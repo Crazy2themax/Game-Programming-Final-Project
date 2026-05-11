@@ -2705,6 +2705,16 @@ animations = [{
 "speed": 12.0
 }]
 
+[sub_resource type="Gradient" id="Gradient_ghqjf"]
+offsets = PackedFloat32Array(0, 0.10687023, 0.9961832, 1)
+colors = PackedColorArray(1, 1, 1, 1, 0.97616875, 0.97616875, 0.97616875, 1, 0.111435235, 0.111435235, 0.111435235, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_elstv"]
+gradient = SubResource("Gradient_ghqjf")
+fill = 1
+fill_from = Vector2(0.44444445, 0.5811966)
+fill_to = Vector2(0.123931624, 0.17521368)
+
 [node name="level 2" type="Node2D" unique_id=1035286738]
 script = ExtResource("1_y6uo0")
 
@@ -2873,6 +2883,21 @@ shape = SubResource("RectangleShape2D_qlncw")
 position = Vector2(25, 578)
 sprite_frames = SubResource("SpriteFrames_a5tg1")
 autoplay = "default"
+
+[node name="PointLight2D" type="PointLight2D" parent="." unique_id=483812966]
+position = Vector2(2152, 190)
+color = Color(0.7764706, 0.7176471, 0, 1)
+texture = SubResource("GradientTexture2D_elstv")
+
+[node name="PointLight2D2" type="PointLight2D" parent="." unique_id=1408745082]
+position = Vector2(2104, 190)
+color = Color(0.7764706, 0.7176471, 0, 1)
+texture = SubResource("GradientTexture2D_elstv")
+
+[node name="PointLight2D3" type="PointLight2D" parent="." unique_id=1034184198]
+position = Vector2(25, 578)
+color = Color(0.77562517, 0.12616113, 1.0039216, 1)
+texture = SubResource("GradientTexture2D_elstv")
 
 [node name="Player" parent="." unique_id=1946971537 instance=ExtResource("8_v4v63")]
 position = Vector2(50, 588)
