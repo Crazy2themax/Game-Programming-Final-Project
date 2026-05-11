@@ -1,15 +1,17 @@
 [gd_scene format=3 uid="uid://bbofpjujklrym"]
 
 [ext_resource type="Texture2D" uid="uid://ctsi0mageaxf4" path="res://Assets/Background/Forest/parallax-demon-woods-bg.png" id="1_826l0"]
+[ext_resource type="Script" uid="uid://h2shaexm5r5g" path="res://Assets/scenes/level_1.gd" id="1_dh417"]
 [ext_resource type="Texture2D" uid="uid://clqt116vfyql4" path="res://Assets/Background/Forest/parallax-demon-woods-far-trees.png" id="2_t0agi"]
 [ext_resource type="Texture2D" uid="uid://gyi4eeuopn4y" path="res://Assets/Background/Forest/parallax-demon-woods-mid-trees.png" id="3_ypqxo"]
 [ext_resource type="Texture2D" uid="uid://cmthqtkj058vu" path="res://Assets/npc's/NPC's/Necromancer/Necromancer_creativekind-Sheet.png" id="4_4j608"]
 [ext_resource type="Texture2D" uid="uid://c5ut3wvg835u3" path="res://Assets/Background/Forest/parallax-demon-woods-close-trees.png" id="4_5kvqq"]
 [ext_resource type="PackedScene" path="res://Assets/scenes/UI-interface.tscn" id="5_t0agi"]
 [ext_resource type="PackedScene" uid="uid://dqlvxnkvo2014" path="res://Assets/scenes/player.tscn" id="6_3v0qq"]
-[ext_resource type="Texture2D" uid="uid://cgld8ts8f3o51" path="res://Assets/Background/Forest/Tileset.png" id="8_826l0"]
+[ext_resource type="Texture2D" uid="uid://cgld8ts8f3o51" path="res://Assets/Background/Forest/tileset.png" id="8_826l0"]
 [ext_resource type="Texture2D" uid="uid://da2vw2jvoy3oe" path="res://Assets/Background/Forest/spr_portal_strip8.png" id="8_wrinw"]
 [ext_resource type="Script" uid="uid://c2wty8v23jcwo" path="res://Assets/scripts/necromancer.gd" id="8_ypqxo"]
+[ext_resource type="PackedScene" path="res://Assets/scenes/heart_pickup.tscn" id="11_5kvqq"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_t0agi"]
 texture = ExtResource("8_826l0")
@@ -491,7 +493,11 @@ animations = [{
 radius = 30.0
 height = 130.0
 
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_5kvqq"]
+distance = -25.0
+
 [node name="Level 1" type="Node2D" unique_id=1454689774]
+script = ExtResource("1_dh417")
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="." unique_id=2047478039]
 
@@ -499,12 +505,11 @@ height = 130.0
 texture_filter = 1
 texture_repeat = 2
 motion_scale = Vector2(0, 0)
-motion_mirroring = Vector2(480, 0)
 
 [node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/bg" unique_id=1364753495]
 texture_repeat = 2
-position = Vector2(577, 632)
-scale = Vector2(1, 1.168)
+position = Vector2(578, 540.924)
+scale = Vector2(1.0017362, 0.99736536)
 texture = ExtResource("1_826l0")
 region_enabled = true
 region_rect = Rect2(0, 0, 1152, 1081)
@@ -514,12 +519,11 @@ texture_filter = 1
 texture_repeat = 2
 scale = Vector2(4, 4)
 motion_scale = Vector2(0.1, 0.1)
-motion_mirroring = Vector2(592, 0)
 
 [node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/far_trees" unique_id=1325203478]
 texture_repeat = 2
-position = Vector2(575.75, 140.99998)
-scale = Vector2(1, 1.1775208)
+position = Vector2(576.25, 135.25)
+scale = Vector2(1, 1.1229166)
 texture = ExtResource("2_t0agi")
 region_enabled = true
 region_rect = Rect2(0, 0, 1152, 240)
@@ -529,12 +533,10 @@ texture_filter = 1
 texture_repeat = 2
 scale = Vector2(4, 4)
 motion_scale = Vector2(0.2, 0.2)
-motion_mirroring = Vector2(592, 0)
 
 [node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/mid-trees" unique_id=811239804]
 texture_repeat = 2
-position = Vector2(573, 136.17749)
-scale = Vector2(1, 1.1368957)
+position = Vector2(575.875, 151)
 texture = ExtResource("3_ypqxo")
 region_enabled = true
 region_rect = Rect2(0, 0, 1152, 240)
@@ -544,17 +546,14 @@ texture_filter = 1
 texture_repeat = 2
 scale = Vector2(4, 4)
 motion_scale = Vector2(0.3, 0.3)
-motion_mirroring = Vector2(592, 0)
 
 [node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/close-trees" unique_id=1929801295]
 texture_repeat = 2
-position = Vector2(575.75, 135)
-scale = Vector2(1, 1.1368957)
+position = Vector2(577, 135)
+scale = Vector2(1.002, 1.1249999)
 texture = ExtResource("4_5kvqq")
 region_enabled = true
 region_rect = Rect2(0, 0, 1152, 240)
-
-[node name="UI-interface" parent="ParallaxBackground/close-trees/Sprite2D" unique_id=2098177685 instance=ExtResource("5_t0agi")]
 
 [node name="TileMap" type="TileMap" parent="." unique_id=1274663665]
 physics_interpolation_mode = 2
@@ -600,10 +599,10 @@ position = Vector2(1288, 195)
 shape = SubResource("CapsuleShape2D_6444e")
 
 [node name="DetectionZone" type="Area2D" parent="Necromancer" unique_id=173232795]
+visible = false
 position = Vector2(1288, 195)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Necromancer/DetectionZone" unique_id=479829292]
-visible = false
 shape = SubResource("CircleShape2D_evi0p")
 
 [node name="SpellSpawn" type="Marker2D" parent="Necromancer" unique_id=1529021847]
@@ -632,6 +631,7 @@ position = Vector2(2864, 451)
 shape = SubResource("CapsuleShape2D_6444e")
 
 [node name="DetectionZone" type="Area2D" parent="Necromancer2" unique_id=1670239162]
+visible = false
 position = Vector2(2864, 451)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Necromancer2/DetectionZone" unique_id=391417471]
@@ -651,3 +651,19 @@ frame_progress = 0.4140084
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Portal" unique_id=1647789412]
 position = Vector2(4072, 536)
 shape = SubResource("CapsuleShape2D_yaxpm")
+
+[node name="HeartPickup" parent="." unique_id=1158657073 instance=ExtResource("11_5kvqq")]
+position = Vector2(1288, 221)
+
+[node name="HeartPickup2" parent="." unique_id=1396773485 instance=ExtResource("11_5kvqq")]
+position = Vector2(2864, 451)
+
+[node name="AbyssBorder" type="Area2D" parent="." unique_id=92097146]
+position = Vector2(0, 800)
+collision_layer = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AbyssBorder" unique_id=1840162178]
+position = Vector2(0, 286)
+shape = SubResource("WorldBoundaryShape2D_5kvqq")
+
+[node name="UI-interface" parent="." unique_id=2098177685 instance=ExtResource("5_t0agi")]
