@@ -7,9 +7,10 @@
 [ext_resource type="Texture2D" uid="uid://c5ut3wvg835u3" path="res://Assets/Background/Forest/parallax-demon-woods-close-trees.png" id="4_5kvqq"]
 [ext_resource type="PackedScene" path="res://Assets/scenes/UI-interface.tscn" id="5_t0agi"]
 [ext_resource type="PackedScene" uid="uid://dqlvxnkvo2014" path="res://Assets/scenes/player.tscn" id="6_3v0qq"]
-[ext_resource type="Texture2D" uid="uid://cgld8ts8f3o51" path="res://Assets/Background/Forest/Tileset.png" id="8_826l0"]
+[ext_resource type="Texture2D" uid="uid://cgld8ts8f3o51" path="res://Assets/Background/Forest/tileset.png" id="8_826l0"]
 [ext_resource type="Texture2D" uid="uid://da2vw2jvoy3oe" path="res://Assets/Background/Forest/spr_portal_strip8.png" id="8_wrinw"]
 [ext_resource type="Script" uid="uid://c2wty8v23jcwo" path="res://Assets/scripts/necromancer.gd" id="8_ypqxo"]
+[ext_resource type="AudioStream" uid="uid://b00bhskrvusj4" path="res://Assets/sounds/background/Level 1/the_mountain-fantasy-ambient-138192.mp3" id="11_5kvqq"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_t0agi"]
 texture = ExtResource("8_826l0")
@@ -651,3 +652,8 @@ frame_progress = 0.4140084
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Portal" unique_id=1647789412]
 position = Vector2(4072, 536)
 shape = SubResource("CapsuleShape2D_yaxpm")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=1336454346]
+stream = ExtResource("11_5kvqq")
+autoplay = true
+bus = &"background"
