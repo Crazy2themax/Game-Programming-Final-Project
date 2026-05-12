@@ -68,7 +68,7 @@ func get_health_component() -> PlayerHealth:
 
 func _on_died() -> void:
 	if is_dead:
-		return
+		get_tree().change_scene_to_file("res://Assets/scenes/VictoryMenu.tscn")
 
 	is_dead = true
 	fire_cooldown = 0.0

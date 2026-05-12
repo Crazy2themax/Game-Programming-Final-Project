@@ -645,7 +645,7 @@ shape = SubResource("WorldBoundaryShape2D_gkjer")
 one_way_collision = true
 
 [node name="Player" parent="." unique_id=1946971537 instance=ExtResource("6_3v0qq")]
-position = Vector2(58, 929)
+position = Vector2(39, 940)
 scale = Vector2(2.4, 2.4)
 
 [node name="Camera2D" type="Camera2D" parent="Player" unique_id=137791161]

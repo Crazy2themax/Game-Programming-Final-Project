@@ -46,6 +46,7 @@ func reset_health() -> void:
 
 func is_dead() -> bool:
 	return current_health <= 0
+	
 
 func is_invulnerable() -> bool:
 	return not invulnerability_timer.is_stopped()
