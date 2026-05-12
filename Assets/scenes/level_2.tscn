@@ -2957,7 +2957,7 @@ position = Vector2(4073.0002, 549)
 scale = Vector2(0.60312575, 0.5593749)
 sprite_frames = SubResource("SpriteFrames_njhch")
 autoplay = "default"
-frame_progress = 0.40499598
+frame_progress = 0.62118787
 
 [node name="Player" parent="." unique_id=1946971537 instance=ExtResource("8_v4v63")]
 position = Vector2(36, 585)
