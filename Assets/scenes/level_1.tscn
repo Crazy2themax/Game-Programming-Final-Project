@@ -11,6 +11,7 @@
 [ext_resource type="Texture2D" uid="uid://cgld8ts8f3o51" path="res://Assets/Background/Forest/tileset.png" id="8_826l0"]
 [ext_resource type="Texture2D" uid="uid://da2vw2jvoy3oe" path="res://Assets/Background/Forest/spr_portal_strip8.png" id="8_wrinw"]
 [ext_resource type="Script" uid="uid://c2wty8v23jcwo" path="res://Assets/scripts/necromancer.gd" id="8_ypqxo"]
+[ext_resource type="Script" uid="uid://3wsr6cxf6je1" path="res://Assets/Scripts/portal.gd" id="10_gkjer"]
 [ext_resource type="PackedScene" path="res://Assets/scenes/heart_pickup.tscn" id="11_5kvqq"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_t0agi"]
@@ -496,8 +497,15 @@ height = 130.0
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_5kvqq"]
 distance = -25.0
 
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_gkjer"]
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_gkjer"]
+distance = 3.0000024
+
 [node name="Level 1" type="Node2D" unique_id=1454689774]
 script = ExtResource("1_dh417")
+
+[node name="UI-interface" parent="." unique_id=2098177685 instance=ExtResource("5_t0agi")]
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="." unique_id=2047478039]
 
@@ -562,7 +570,7 @@ position = Vector2(0, 2)
 scale = Vector2(2, 2)
 tile_set = SubResource("TileSet_ypqxo")
 format = 2
-layer_0/tile_data = PackedInt32Array(2097152, 327680, 3, 2097153, 327680, 3, 2097154, 327680, 3, 2097155, 327680, 3, 2031616, 327680, 3, 2031617, 327680, 3, 2031618, 327680, 3, 2031619, 327680, 3, 1703983, 327680, 3, 1703984, 327680, 3, 1441856, 327680, 3, 1507401, 327680, 3, 1507400, 327680, 3, 524364, 327680, 3, 524365, 327680, 3, 1835091, 327680, 3, 1835092, 327680, 3, 1769562, 327680, 3, 1769563, 327680, 3, 1572960, 327680, 3, 1114164, 327680, 3, 1114165, 327680, 3, 393297, 327680, 3, 1048663, 327680, 3, 1048664, 327680, 3, 1048665, 327680, 3, 1048666, 327680, 3, 1048667, 327680, 3, 1048668, 327680, 3, 1048662, 327680, 3, 1376358, 327680, 3, 917602, 327680, 3, 917603, 327680, 3, 786537, 327680, 3, 786538, 327680, 3, 1507437, 327680, 3, 1507438, 327680, 3, 917616, 327680, 805306371, 917617, 327680, 805306371, 1310836, 327680, 805306371, 1310837, 327680, 805306371, 1310838, 327680, 805306371, 1179771, 327680, 805306371, 1179772, 327680, 805306371, 1179773, 327680, 805306371, 1179774, 327680, 805306371, 1179775, 327680, 805306371, 1179776, 327680, 805306371, 1245308, 327680, 805306371, 1245309, 327680, 805306371, 1245310, 327680, 805306371, 1245311, 327680, 805306371, 1507380, 327680, 3, 1507381, 327680, 3, 720958, 327680, 3, 524355, 327680, 3, 524356, 327680, 3, 1572961, 327680, 3, 1376359, 327680, 3, 524331, 327680, 3, 524330, 327680, 3, 524329, 327680, 3, 524328, 327680, 3, 524327, 327680, 3, 917559, 327680, 3, 917560, 327680, 3, 786483, 327680, 3, 786482, 327680, 3, 655406, 327680, 3, 1966091, 327680, 3, 1769489, 327680, 3, 1769490, 327680, 3, 1966090, 327680, 3, 1572876, 327680, 3, 1572875, 327680, 3, 1376273, 327680, 3, 1376274, 327680, 3, 1245207, 327680, 3, 1245208, 327680, 3, 1835044, 327680, 3, 1638440, 327680, 3, 1048603, 327680, 3, 1048604, 327680, 3, 1638441, 327680, 3, 720959, 327680, 3, 1310767, 327680, 3, 1310768, 327680, 3, 1835045, 327680, 3, 1638478, 327680, 3, 1638479, 327680, 3, 1114173, 327680, 3, 1114174, 327680, 3, 1441857, 327680, 3)
+layer_0/tile_data = PackedInt32Array(2097152, 327680, 3, 2097153, 327680, 3, 2097154, 327680, 3, 2097155, 327680, 3, 2031616, 327680, 3, 2031617, 327680, 3, 2031618, 327680, 3, 2031619, 327680, 3, 524364, 327680, 3, 524365, 327680, 3, 1835092, 327680, 3, 1769562, 327680, 3, 1572960, 327680, 3, 393297, 327680, 3, 1376358, 327680, 3, 917602, 327680, 3, 917603, 327680, 3, 786537, 327680, 3, 786538, 327680, 3, 1507437, 327680, 3, 1507438, 327680, 3, 917616, 327680, 805306371, 917617, 327680, 805306371, 1310836, 327680, 805306371, 1310837, 327680, 805306371, 1310838, 327680, 805306371, 1179771, 327680, 805306371, 1179772, 327680, 805306371, 1179773, 327680, 805306371, 1179774, 327680, 805306371, 1179775, 327680, 805306371, 1179776, 327680, 805306371, 1245308, 327680, 805306371, 1245309, 327680, 805306371, 1245310, 327680, 805306371, 1245311, 327680, 805306371, 1966091, 327680, 3, 1769489, 327680, 3, 1769490, 327680, 3, 1966090, 327680, 3, 1572876, 327680, 3, 1572875, 327680, 3, 1376273, 327680, 3, 1376274, 327680, 3, 1245207, 327680, 3, 1245208, 327680, 3, 1835044, 327680, 3, 1638440, 327680, 3, 1048603, 327680, 3, 1048604, 327680, 3, 1638441, 327680, 3, 1835045, 327680, 3, 1638479, 327680, 3, 2162687, 327680, 3, 2097151, 327680, 3, 2097150, 327680, 3, 2162686, 327680, 3, 2162685, 327680, 3, 2097149, 327680, 3, 1638447, 327680, 3, 1703991, 327680, 3, 1703992, 327680, 3, 1966146, 327680, 3, 1835078, 327680, 3, 1704010, 327680, 3, 851991, 327680, 3, 655379, 327680, 3, 524313, 327680, 3, 458784, 327680, 3, 458799, 327680, 3, 458808, 327680, 3, 1703990, 327680, 3, 1703989, 327680, 3, 1703988, 327680, 3, 1703993, 327680, 3, 655446, 327680, 3, 589916, 327680, 3, 458792, 327680, 3, 393279, 327680, 3, 524356, 327680, 3)
 
 [node name="Player" parent="." unique_id=1946971537 instance=ExtResource("6_3v0qq")]
 position = Vector2(45, 943)
@@ -575,10 +583,12 @@ limit_top = -2
 limit_right = 10000003
 limit_bottom = 1079
 
-[node name="Necromancer" type="CharacterBody2D" parent="." unique_id=2143033071]
+[node name="Necromancer1" type="CharacterBody2D" parent="." unique_id=2143033071 node_paths=PackedStringArray("heart_pickup")]
+position = Vector2(476, 438)
 script = ExtResource("8_ypqxo")
+heart_pickup = NodePath("../HeartPickup1")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Necromancer" unique_id=1414841601]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Necromancer1" unique_id=1414841601]
 texture_filter = 1
 position = Vector2(1285, 141)
 scale = Vector2(2, 2)
@@ -587,60 +597,29 @@ animation = &"Attack"
 frame = 12
 frame_progress = 1.0
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Necromancer" unique_id=351655528]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Necromancer1" unique_id=351655528]
 visible = false
 position = Vector2(1288, 195)
 shape = SubResource("CapsuleShape2D_evi0p")
 
-[node name="HurtBox" type="Area2D" parent="Necromancer" unique_id=694171793]
+[node name="HurtBox" type="Area2D" parent="Necromancer1" unique_id=694171793]
 position = Vector2(1288, 195)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Necromancer/HurtBox" unique_id=790387078]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Necromancer1/HurtBox" unique_id=790387078]
 shape = SubResource("CapsuleShape2D_6444e")
 
-[node name="DetectionZone" type="Area2D" parent="Necromancer" unique_id=173232795]
+[node name="DetectionZone" type="Area2D" parent="Necromancer1" unique_id=173232795]
 visible = false
 position = Vector2(1288, 195)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Necromancer/DetectionZone" unique_id=479829292]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Necromancer1/DetectionZone" unique_id=479829292]
 shape = SubResource("CircleShape2D_evi0p")
 
-[node name="SpellSpawn" type="Marker2D" parent="Necromancer" unique_id=1529021847]
-position = Vector2(1320, 150)
-
-[node name="Necromancer2" type="CharacterBody2D" parent="." unique_id=1898417134]
-script = ExtResource("8_ypqxo")
-
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Necromancer2" unique_id=808038309]
-texture_filter = 1
-position = Vector2(2864, 394)
-scale = Vector2(2, 2)
-sprite_frames = SubResource("SpriteFrames_x68w5")
-animation = &"Attack"
-frame = 12
-frame_progress = 1.0
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Necromancer2" unique_id=1309277678]
-position = Vector2(2864, 451)
-shape = SubResource("CapsuleShape2D_evi0p")
-
-[node name="HurtBox" type="Area2D" parent="Necromancer2" unique_id=197660329]
-position = Vector2(2864, 451)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Necromancer2/HurtBox" unique_id=1672924270]
-shape = SubResource("CapsuleShape2D_6444e")
-
-[node name="DetectionZone" type="Area2D" parent="Necromancer2" unique_id=1670239162]
-visible = false
-position = Vector2(2864, 451)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Necromancer2/DetectionZone" unique_id=391417471]
-shape = SubResource("CircleShape2D_evi0p")
-
-[node name="SpellSpawn" type="Marker2D" parent="Necromancer2" unique_id=1358671979]
-position = Vector2(2887, 426)
+[node name="SpellSpawn" type="Marker2D" parent="Necromancer1" unique_id=1529021847]
+position = Vector2(1323, 144)
 
 [node name="Portal" type="Area2D" parent="." unique_id=1052598636]
+script = ExtResource("10_gkjer")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Portal" unique_id=227522556]
 position = Vector2(4073, 532)
@@ -652,11 +631,9 @@ frame_progress = 0.4140084
 position = Vector2(4072, 536)
 shape = SubResource("CapsuleShape2D_yaxpm")
 
-[node name="HeartPickup" parent="." unique_id=1158657073 instance=ExtResource("11_5kvqq")]
-position = Vector2(1288, 221)
-
-[node name="HeartPickup2" parent="." unique_id=1396773485 instance=ExtResource("11_5kvqq")]
-position = Vector2(2864, 451)
+[node name="HeartPickup1" parent="." unique_id=1158657073 instance=ExtResource("11_5kvqq")]
+position = Vector2(1764, 633)
+initial_delay = 120.0
 
 [node name="AbyssBorder" type="Area2D" parent="." unique_id=92097146]
 position = Vector2(0, 800)
@@ -666,4 +643,15 @@ collision_layer = 4
 position = Vector2(0, 286)
 shape = SubResource("WorldBoundaryShape2D_5kvqq")
 
-[node name="UI-interface" parent="." unique_id=2098177685 instance=ExtResource("5_t0agi")]
+[node name="LeftBorder" type="StaticBody2D" parent="." unique_id=824170148]
+position = Vector2(-10, 520)
+rotation = 1.5707964
+collision_layer = 4
+physics_material_override = SubResource("PhysicsMaterial_gkjer")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="LeftBorder" unique_id=1281855804]
+position = Vector2(16, -11.000001)
+shape = SubResource("WorldBoundaryShape2D_gkjer")
+one_way_collision = true
+
+[connection signal="body_entered" from="AbyssBorder" to="." method="_on_abyss_border_body_entered"]

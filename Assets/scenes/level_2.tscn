@@ -16,7 +16,7 @@
 [ext_resource type="AudioStream" uid="uid://1jfcsi6qglxp" path="res://Assets/sounds/background/level 2/dominic251-winter-468650.mp3" id="12_v3ism"]
 [ext_resource type="Texture2D" uid="uid://ddmf3k5tceo51" path="res://Assets/Background/spr_torch.png" id="15_v4v63"]
 [ext_resource type="Texture2D" uid="uid://b74quemo33miy" path="res://Assets/pickup-object/magic-key.png" id="16_gre0b"]
-[ext_resource type="Script" uid="uid://cpnfouknnd4ee" path="res://Assets/scripts/evil_reindeer.gd" id="17_qlncw"]
+[ext_resource type="Script" path="res://Assets/scripts/evil_reindeer.gd" id="17_qlncw"]
 [ext_resource type="Texture2D" uid="uid://c661xp44ips6k" path="res://Assets/level 2 ennemies sprite pack/2 Elkman/Elkman_attack.png" id="18_ghqjf"]
 [ext_resource type="AudioStream" uid="uid://bgbd0smoj4781" path="res://Assets/sounds/sound effects/lvl 2/dragon-studio-simple-whoosh-382724.mp3" id="19_7g47h"]
 [ext_resource type="Texture2D" uid="uid://b4falq7g54hok" path="res://Assets/level 2 ennemies sprite pack/2 Elkman/Elkman_death.png" id="19_elstv"]

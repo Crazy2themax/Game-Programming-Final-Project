@@ -1,8 +1,8 @@
 extends CharacterBody2D
 
-const SPEED = 150.0
+var SPEED = 150.0
 @export var gravity: float = 400.0
-const JUMP_VELOCITY = -300.0
+var JUMP_VELOCITY = -300.0
 const MID_LEVEL_WIN_PATH = "res://Assets/scenes/in-middle-level-win.tscn"
 const VICTORY_MENU_PATH = "res://Assets/scenes/VictoryMenu.tscn"
 const CHEAT_CODE = "SKIP"

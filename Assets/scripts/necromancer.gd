@@ -6,8 +6,7 @@ extends CharacterBody2D
 
 const SPELL_SCENE = preload("res://Assets/scenes/spell_attack.tscn")
 
-# Remove the HEART_PICKUP preload, no longer needed
-# Add this export so you can link the heart in the Inspector
+# Link the corresponding heart in the Inspector
 @export var heart_pickup: Node2D
 
 var max_health = 2
@@ -108,19 +107,27 @@ func die():
 	anim.play("Death")
 	$CollisionShape2D.set_deferred("disabled", true)
 	$HurtBox/CollisionShape2D.set_deferred("disabled", true)
+	# Disable detection zone immediately so it stops firing signals
+	$DetectionZone/CollisionShape2D.set_deferred("disabled", true)
 	await anim.animation_finished
-	# Tell the already-placed heart to start its visible cycle
 	if heart_pickup != null:
+		heart_pickup.get_node("HiddenTimer").stop()
+		heart_pickup.get_node("VisibleTimer").stop()
 		heart_pickup._show_at_random_position()
 	queue_free()
 
 func _on_body_entered(body):
 	if body.is_in_group("player"):
+		if is_dead:
+			return
 		player_in_range = true
 		player_ref = body
 
 func _on_body_exited(body):
 	if body.is_in_group("player"):
+		# Only reset if we are not dead
+		if is_dead:
+			return
 		player_in_range = false
 		player_ref = null
 		anim.play("Idle")
