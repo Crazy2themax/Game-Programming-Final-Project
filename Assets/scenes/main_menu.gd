@@ -101,7 +101,7 @@ func _on_options_button_pressed() -> void:
 func _on_start_button_pressed() -> void:
 	_play_click()
 	GameSession.start_new_run()
-	get_tree().change_scene_to_file("res://Assets/scenes/level_1.tscn")
+	get_tree().change_scene_to_file("res://Assets/scenes/guide-scene1.tscn")
 	print("open new scene")
 
 func _on_endgame_button_pressed() -> void:

@@ -11,7 +11,8 @@
 [ext_resource type="Texture2D" uid="uid://cgld8ts8f3o51" path="res://Assets/Background/Forest/tileset.png" id="8_826l0"]
 [ext_resource type="Texture2D" uid="uid://da2vw2jvoy3oe" path="res://Assets/Background/Forest/spr_portal_strip8.png" id="8_wrinw"]
 [ext_resource type="Script" uid="uid://c2wty8v23jcwo" path="res://Assets/scripts/necromancer.gd" id="8_ypqxo"]
-[ext_resource type="AudioStream" uid="uid://b00bhskrvusj4" path="res://Assets/sounds/background/Level 1/the_mountain-fantasy-ambient-138192.mp3" id="11_5kvqq"]
+[ext_resource type="Script" uid="uid://3wsr6cxf6je1" path="res://Assets/scripts/portal.gd" id="10_gkjer"]
+[ext_resource type="PackedScene" path="res://Assets/scenes/heart_pickup.tscn" id="11_5kvqq"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_t0agi"]
 texture = ExtResource("8_826l0")
@@ -611,7 +612,7 @@ shape = SubResource("CapsuleShape2D_6444e")
 visible = false
 position = Vector2(1288, 195)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Necromancer2/DetectionZone" unique_id=391417471]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Necromancer1/DetectionZone" unique_id=479829292]
 shape = SubResource("CircleShape2D_evi0p")
 
 [node name="SpellSpawn" type="Marker2D" parent="Necromancer1" unique_id=1529021847]
