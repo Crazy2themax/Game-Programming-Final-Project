@@ -2664,8 +2664,8 @@ fill_to = Vector2(0, 0)
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_ghqjf"]
 
 [sub_resource type="SegmentShape2D" id="SegmentShape2D_ghqjf"]
-a = Vector2(-520, -10.999977)
-b = Vector2(114, -11.000005)
+a = Vector2(604, 280.99997)
+b = Vector2(-6, 283)
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_elstv"]
 
@@ -2733,25 +2733,8 @@ animations = [{
 "speed": 6.0
 }]
 
-[sub_resource type="Gradient" id="Gradient_ghqjf"]
-offsets = PackedFloat32Array(0, 0.259542, 0.9961832, 1)
-colors = PackedColorArray(1, 1, 1, 1, 0.97616875, 0.97616875, 0.97616875, 1, 0.111435235, 0.111435235, 0.111435235, 1, 0, 0, 0, 1)
-
-[sub_resource type="GradientTexture2D" id="GradientTexture2D_elstv"]
-gradient = SubResource("Gradient_ghqjf")
-fill = 1
-fill_from = Vector2(0.44444445, 0.5811966)
-fill_to = Vector2(0.123931624, 0.17521368)
-
-[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_ghqjf"]
-
-[sub_resource type="SegmentShape2D" id="SegmentShape2D_ghqjf"]
-a = Vector2(-520, -10.999977)
-b = Vector2(114, -11.000005)
-
-[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_elstv"]
-
 [node name="level 2" type="Node2D" unique_id=1035286738]
+position = Vector2(0, -1)
 script = ExtResource("1_y6uo0")
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="." unique_id=937682882]
@@ -2921,12 +2904,6 @@ position = Vector2(1358, 205)
 position = Vector2(10.5, -6.5)
 shape = SubResource("RectangleShape2D_qlncw")
 
-[node name="Portal Sprite" type="AnimatedSprite2D" parent="." unique_id=300698117]
-texture_filter = 1
-position = Vector2(25, 578)
-sprite_frames = SubResource("SpriteFrames_a5tg1")
-autoplay = "default"
-
 [node name="leftTorchLight" type="PointLight2D" parent="." unique_id=483812966]
 position = Vector2(2152, 190)
 color = Color(0.7764706, 0.7176471, 0, 1)
@@ -2953,7 +2930,7 @@ collision_layer = 4
 physics_material_override = SubResource("PhysicsMaterial_ghqjf")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Borders/LeftBorder" unique_id=19814989]
-position = Vector2(-1.9999999, 3)
+position = Vector2(-504, -290.99997)
 shape = SubResource("SegmentShape2D_ghqjf")
 
 [node name="rightBorder" type="StaticBody2D" parent="Borders" unique_id=1834293587]
@@ -2963,7 +2940,7 @@ collision_layer = 4
 physics_material_override = SubResource("PhysicsMaterial_elstv")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Borders/rightBorder" unique_id=475080146]
-position = Vector2(-125.00003, -541)
+position = Vector2(-68.00001, -10)
 rotation = -1.5707964
 shape = SubResource("SegmentShape2D_ghqjf")
 

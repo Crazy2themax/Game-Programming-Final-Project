@@ -2,7 +2,7 @@ extends Control
 
 const MENU_SCENE_PATH := "res://Assets/scenes/MainMenu.tscn"
 const PREV_SCENE_PATH := "res://Assets/scenes/guide-scene1.tscn"
-const START_LEVEL_PATH := "res://Assets/scenes/Background.tscn"
+const START_LEVEL_PATH := "res://Assets/scenes/level_1.tscn"
 
 @onready var title_label: Label = $MarginContainer/VBoxContainer/TitleLabel
 @onready var subtitle_label: Label = $MarginContainer/VBoxContainer/SubtitleLabel
